@@ -1,14 +1,19 @@
 #!/usr/bin/env bash
 set -e
-cd $HOME/.setuptools/bin/
 
 
-rm setuptools
-rm setuptools-update
+# PREPARE
+cd $HOME
+mkdir .setuptools_update_tmp
+cd .setuptools_update_tmp
 
-curl -O https://raw.githubusercontent.com/shotastage/setuptools.sh/master/setuptools.sh
-curl -O https://raw.githubusercontent.com/shotastage/setuptools.sh/master/setuptools-update.sh
-mv setuptools.sh setuptools
-mv setuptools-update.sh setuptools-update
-chmod +x setuptools
-chmod +x setuptools-update
+git clone https://github.com/shotastage/setuptools.sh.git
+cd setuptools.sh
+
+cp -rf ./lib/ $HOME/.setuptools/lib/
+cp -f setuptools.sh $HOME/.setuptools/bin/setuptools
+cp -f setuptools-update.sh $HOME/.setuptools/bin/setuptools-update
+
+
+cd $HOME
+rm -rf .setuptools_update_tmp/
