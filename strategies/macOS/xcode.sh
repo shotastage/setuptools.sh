@@ -11,7 +11,9 @@ function install {
 }
 
 function uninstall {
-    sudo mas uninstall $CURRENT_ID
+    echo "🛑  Xcode is necessary for setuptools.sh & other development software!"
+    echo "🛑  This operation probably cause critical changes."
+    echo "🛑  For stability reason, abort and cancel this operation defualt."
 }
 
 function update {
