@@ -3,7 +3,7 @@ set -e
 
 
 WORKING_DIRECTORY=~/.setuptools
-MASTER_URL="https://github.com/shotastage/setuptools.sh/blob/master/strategies/macOS"
+MASTER_URL="https://raw.githubusercontent.com/shotastage/setuptools.sh/master/strategies/macOS"
 
 function execute {
     cd $WORKING_DIRECTORY/strategies/
