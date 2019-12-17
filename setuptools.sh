@@ -37,6 +37,17 @@ if [ ${1} = "uninstall" ]; then
     exit 0
 fi
 
+if [ ${1} = "update" ]; then
+    if [ ${2} = "self" ]; then
+        setuptools-update
+        exit 0
+    fi
+
+    execute update $2
+    exit 0
+fi
+
+
 
 if [ ${1} = "show-user-log" ]; then
     cat $WORKING_DIRECTORY/exec_user_log
