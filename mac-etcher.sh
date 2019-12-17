@@ -27,10 +27,16 @@ function install {
     rm balenaEtcher-1.5.70.dmg
 }
 
+function uninstall {
+    cd /Applications/
+    echo "🧹  Removing appliation..."
+    rm -rf balenaEtcher.app
+    echo "🧹  Cleaning remaining files..."
+    rm -rf ~/Library/Preferences/io.balena.etcher.plist
+    rm -rf ~/Library/Saved Application State/io.balena.etcher.savedState
+    echo "🧹  Uninstall completed!"
+}
 
 function main {
     install
 }
-
-
-main
