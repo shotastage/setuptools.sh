@@ -1,8 +1,7 @@
 #!/usr/bin/env bash
 
-cd ~/.setuptools/
 . lib/toolchain.sh
-. lin/fish_config.sh
+. lib/fish.sh
 
 function install {
     curl -LO https://storage.googleapis.com/flutter_infra/releases/stable/macos/flutter_macos_v1.12.13+hotfix.5-stable.zip
