@@ -27,5 +27,6 @@ function make_directories {
     [ -d $WORKING_DIRECTORY ] || mkdir $WORKING_DIRECTORY
     [ -d $WORKING_DIRECTORY/strategies/ ] || mkdir -p $WORKING_DIRECTORY/strategies/
     [ -d $WORKING_DIRECTORY/toolchains/ ] || mkdir -p $WORKING_DIRECTORY/toolchains/
+    [ -d $WORKING_DIRECTORY/config/ ] || mkdir -p $WORKING_DIRECTORY/config/
     [ -d $WORKING_DIRECTORY/bin/ ] || mkdir -p $WORKING_DIRECTORY/bin/
 }
