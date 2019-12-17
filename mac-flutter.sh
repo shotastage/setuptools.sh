@@ -1,5 +1,7 @@
 #!/usr/bin/env bash
 
+STRATEGY_VERSION="v001"
+
 . ../lib/toolchain.sh
 . ../lib/fish.sh
 
