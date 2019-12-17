@@ -11,4 +11,5 @@ function generate_fish_script {
 
 function add_fish_path {
     generate_fish_script $1
+    ./fish_adding_script.fish
 }
