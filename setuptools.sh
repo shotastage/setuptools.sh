@@ -18,6 +18,7 @@ function in_workspace {
 in_workspace
 . ./lib/workspace.sh
 . ./lib/executor.sh
+. ./lib/strategies.sh
 
 splash
 initialize
@@ -54,6 +55,10 @@ if [ ${1} = "--clear-strategies" ]; then
     exit 0
 fi
 
+if [ ${1} = "search" ]; then
+    search_strategy $2
+    exit 0
+fi
 
 if [ ${1} = "show-user-log" ]; then
     cat $WORKING_DIRECTORY/exec_user_log
