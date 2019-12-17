@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-WORKING_DIRECTORY=~/.setuptools/
+WORKING_DIRECTORY=~/.setuptools
 
 function initialize {
     if [ -e $WORKING_DIRECTORY ]; then
