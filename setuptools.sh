@@ -48,6 +48,12 @@ if [ ${1} = "update" ]; then
 fi
 
 
+if [ ${1} = "--clear-strategies" ]; then
+    cd strategies
+    rm -f *
+    exit 0
+fi
+
 
 if [ ${1} = "show-user-log" ]; then
     cat $WORKING_DIRECTORY/exec_user_log
