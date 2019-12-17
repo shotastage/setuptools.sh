@@ -12,18 +12,6 @@ function initialize {
 
 
 function prepare_workspace {
-    if [ ! -e $WORKING_DIRECTORY ]; then
-        make_directories
-    fi
-
-    if [ ! -e $WORKING_DIRECTORY/strategies/ ]; then
-        make_directories
-    fi
-}
-
-
-function make_directories {
-    echo "Initializing..."
     [ -d $WORKING_DIRECTORY ] || mkdir $WORKING_DIRECTORY
     [ -d $WORKING_DIRECTORY/strategies/ ] || mkdir -p $WORKING_DIRECTORY/strategies/
     [ -d $WORKING_DIRECTORY/toolchains/ ] || mkdir -p $WORKING_DIRECTORY/toolchains/
