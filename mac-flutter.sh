@@ -1,5 +1,6 @@
 #!/usr/bin/env bash
 
+cd ~/.setuptools/
 . lib/toolchain.sh
 . lin/fish_config.sh
 
