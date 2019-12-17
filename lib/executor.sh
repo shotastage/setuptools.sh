@@ -3,7 +3,7 @@ set -e
 
 
 
-WORKING_DIRECTORY=~/.setuptools/
+WORKING_DIRECTORY=~/.setuptools
 MASTER_URL="https://raw.githubusercontent.com/shotastage/setuptools.sh/master"
 
 
