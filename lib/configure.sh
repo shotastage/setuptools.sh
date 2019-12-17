@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-. platform.sh
+. ~/.setuptools/lib/platform.sh
 
 function configure {
 
