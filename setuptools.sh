@@ -15,14 +15,14 @@ function in_workspace {
     cd $WORKING_DIRECTORY
 }
 
+in_workspace
+. ./lib/workspace.sh
+. ./lib/executor.sh
 
 splash
 initialize
-in_workspace
 
 
-. ./lib/workspace.sh
-. ./lib/executor.sh
 
 
 if [ ${1} = "install" ]; then
