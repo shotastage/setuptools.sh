@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
 STRATEGY_VERSION="v001"
-CURRENT_ID="539883307"
+CURRENT_ID="497799835"
 
 
 function install {
@@ -16,8 +16,4 @@ function uninstall {
 
 function update {
     mas upgrade $CURRENT_ID
-}
-
-function main {
-    install
 }
