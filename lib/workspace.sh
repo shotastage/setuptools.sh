@@ -24,5 +24,9 @@ function prepare_workspace {
         return
     fi
 
-    initialize
+    echo "Initializing..."
+    mkdir $WORKING_DIRECTORY
+    mkdir -p $WORKING_DIRECTORY/strategies/
+    mkdir -p $WORKING_DIRECTORY/toolchains/
+    mkdir -p $WORKING_DIRECTORY/bin/
 }
