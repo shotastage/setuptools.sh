@@ -8,6 +8,8 @@ function operating_system {
     else
         OS="Other"
     fi
+
+    echo $OS
 }
 
 

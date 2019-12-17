@@ -19,6 +19,7 @@ in_workspace
 . ./lib/workspace.sh
 . ./lib/executor.sh
 . ./lib/strategies.sh
+. ./lib/configure.sh
 
 splash
 initialize
@@ -48,19 +49,23 @@ if [ ${1} = "update" ]; then
     exit 0
 fi
 
-
-if [ ${1} = "--clear-strategies" ]; then
-    cd strategies
-    rm -rf *
-    exit 0
-fi
-
 if [ ${1} = "search" ]; then
     search_strategy $2
     exit 0
 fi
 
+if [ ${1} = "configure" ]; then
+    configure
+    exit 0
+fi
+
 if [ ${1} = "show-user-log" ]; then
     cat $WORKING_DIRECTORY/exec_user_log
+    exit 0
+fi
+
+if [ ${1} = "--clear-strategies" ]; then
+    cd strategies
+    rm -rf *
     exit 0
 fi
