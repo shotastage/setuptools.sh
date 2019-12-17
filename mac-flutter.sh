@@ -30,6 +30,7 @@ function add_path {
     echo "################ Flutter SDK ################" >> $HOME/.bash_profile
     echo "export PATH=\$PATH:~/.setuptools/toolchains/flutter/bin" >> $HOME/.bash_profile
     add_fish_path "\$HOME/.setuptools/toolchains/flutter/bin"
+    rm fish_adding_script.fish
 }
 
 function main {
