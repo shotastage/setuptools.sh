@@ -50,7 +50,7 @@ fi
 
 if [ ${1} = "--clear-strategies" ]; then
     cd strategies
-    rm -f *
+    rm -rf *
     exit 0
 fi
 
