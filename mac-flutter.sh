@@ -16,6 +16,11 @@ function install {
     flutter doctor
     echo "🧹  Cleaning..."
     rm flutter_macos_v1.12.13+hotfix.5-stable.zip
+    
+    if [ -e /Applications/Visual\ Studio\ Code.app/ ]; then
+        echo "📝  Setup Visual Studio Code extension...."
+        /Applications/Visual\ Studio\ Code.app/Contents/Resources/app/bin/code --install-extension dart-code.flutter
+    fi
     echo "👍🏻  Installation completed!"
 }
 
