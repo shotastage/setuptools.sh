@@ -7,5 +7,11 @@ function prepare_toolchain {
 }
 
 function install_toolchain {
+    if [ -e $HOME/.setuptools/toolchains/$1 ]; then
+        echo "🌞  $1 Toolchain is already exists!"
+        echo "Replace $1 to newer version."
+        rm -rf $HOME/.setuptools/toolchains/$1
+    fi
+
     mv $1 $HOME/.setuptools/toolchains/$1
 }
