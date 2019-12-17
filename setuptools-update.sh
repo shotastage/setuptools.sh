@@ -4,6 +4,10 @@ set -e
 
 # PREPARE
 cd $HOME
+if [ -e .setuptools_update_tmp/ ]; then
+    echo "Update temporary already exists! Remove this directory before starting update."
+    rm -rf .setuptools_update_tmp/
+fi
 mkdir .setuptools_update_tmp
 cd .setuptools_update_tmp
 
@@ -21,3 +25,4 @@ cp -f setuptools-update.sh $HOME/.setuptools/bin/setuptools-update
 
 cd $HOME
 rm -rf .setuptools_update_tmp/
+echo "🆗  Update completed!"
