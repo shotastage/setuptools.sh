@@ -33,6 +33,9 @@ function uninstall {
     echo "🧹 Removing application..."
     rm -rf Transmission.app
     echo "🧹 Removing remaining files..."
+    rm -rf ~/Library/Application Support/Transmission
+    rm -rf ~/Library/Caches/org.m0k.transmission
+    rm -rf ~/Library/Preferences/org.m0k.transmission.plist
     echo "🧹 Transmission has been uninstalled!"
 }
 
