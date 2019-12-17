@@ -15,7 +15,7 @@ function in_workspace {
     cd $WORKING_DIRECTORY
 }
 
-in_workspace
+in_workspaces
 . ./lib/workspace.sh
 . ./lib/executor.sh
 
