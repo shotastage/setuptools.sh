@@ -12,11 +12,11 @@ function initialize {
 
 
 function prepare_workspace {
-    if [! -e $WORKING_DIRECTORY ]; then
+    if [ ! -e $WORKING_DIRECTORY ]; then
         make_directories
     fi
 
-    if [! -e $WORKING_DIRECTORY/strategies/ ]; then
+    if [ ! -e $WORKING_DIRECTORY/strategies/ ]; then
         make_directories
     fi
 }
