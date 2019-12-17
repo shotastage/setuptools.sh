@@ -24,8 +24,8 @@ function prepare_workspace {
 
 function make_directories {
     echo "Initializing..."
-    mkdir $WORKING_DIRECTORY
-    mkdir -p $WORKING_DIRECTORY/strategies/
-    mkdir -p $WORKING_DIRECTORY/toolchains/
-    mkdir -p $WORKING_DIRECTORY/bin/
+    [ -d $WORKING_DIRECTORY ] || mkdir $WORKING_DIRECTORY
+    [ -d $WORKING_DIRECTORY/strategies/ ] || mkdir -p $WORKING_DIRECTORY/strategies/
+    [ -d $WORKING_DIRECTORY/toolchains/ ] || mkdir -p $WORKING_DIRECTORY/toolchains/
+    [ -d $WORKING_DIRECTORY/bin/ ] || mkdir -p $WORKING_DIRECTORY/bin/
 }
