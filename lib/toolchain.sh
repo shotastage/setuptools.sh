@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
 function prepare_toolchain {
-    if [! -e $HOME/.setuptools/toolchains/ ]; then
+    if [ ! -e $HOME/.setuptools/toolchains/ ]; then
         mkdir -p $HOME/.setuptools/toolchains/
     fi
 }

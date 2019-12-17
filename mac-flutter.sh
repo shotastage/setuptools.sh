@@ -4,12 +4,17 @@
 . ../lib/fish.sh
 
 function install {
+    echo "⬇️  Downloading package..."
     curl -LO https://storage.googleapis.com/flutter_infra/releases/stable/macos/flutter_macos_v1.12.13+hotfix.5-stable.zip
+    echo "📦  Extracting package..."
     unzip flutter_macos_v1.12.13+hotfix.5-stable.zip >> /dev/null
     prepare_toolchain
     install_toolchain flutter
     add_path
     flutter doctor
+    echo "🧹  Cleaning..."
+    rm flutter_macos_v1.12.13+hotfix.5-stable.zip
+    echo "👍🏻  Installation completed!"
 }
 
 function uninstall {
