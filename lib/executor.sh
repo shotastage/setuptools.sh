@@ -3,14 +3,13 @@ set -e
 
 
 WORKING_DIRECTORY=~/.setuptools
-MASTER_URL="https://raw.githubusercontent.com/shotastage/setuptools.sh/master"
-
+MASTER_URL="https://github.com/shotastage/setuptools.sh/blob/master/strategies/macOS"
 
 function execute {
     cd $WORKING_DIRECTORY/strategies/
-    curl --silent -O "${MASTER_URL}/mac-${2}.sh"
-    chmod +x mac-${2}.sh
-    . mac-${2}.sh
+    curl --silent -O "${MASTER_URL}/${2}.sh"
+    chmod +x ${2}.sh
+    . ${2}.sh
 
     if [ ${1} = "install" ]; then
         install
