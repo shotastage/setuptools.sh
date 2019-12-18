@@ -20,7 +20,7 @@ function install {
 }
 
 function uninstall {
-    sudo apt-get code --purge
+    sudo apt-get remove code --purge
 }
 
 function update {
