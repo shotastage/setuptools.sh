@@ -43,7 +43,7 @@ function setup_mactex {
 }
 
 function vscode {
-    if [ -e /Applications/Visual\ Studio\ Code.app ]; then
+    if [ -e /usr/bin/code ]; then
         echo "⬇️  TexWorkshopをインストールしています..."
         code --install-extension james-yu.latex-workshop
     fi
