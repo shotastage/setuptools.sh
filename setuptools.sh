@@ -17,7 +17,7 @@ cd $WORKING_DIRECTORY
 . $WORKING_DIRECTORY/lib/strategies.sh
 . $WORKING_DIRECTORY/lib/configure.sh
 
-splash
+splash 
 initialize
 prepare_workspace
 

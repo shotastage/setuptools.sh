@@ -16,6 +16,8 @@ git clone --quiet https://github.com/shotastage/setuptools.sh.git >> /dev/null
 cd setuptools.sh
 
 
+rm -rf $HOME/.setuptools/lib/
+
 echo "🔄  Updating setuptools..."
 cp -rf ./lib/ $HOME/.setuptools/lib/
 cp -f setuptools.sh $HOME/.setuptools/bin/setuptools
