@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
 
 function download {
-    curl -L $1 -o $2 response -#
+    curl -L $1 -o $2 -#
 }
