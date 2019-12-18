@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 set -e
 
-WORKING_DIRECTORY=~/.setuptools/
+WORKING_DIRECTORY=~/.setuptools
 
 
 function splash {
