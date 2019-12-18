@@ -23,7 +23,7 @@ prepare_workspace
 
 
 
-if [ ${1} = "install" ]; then
+if [ ${1} = "install" ] || [ ${1} = "i" ]; then
     execute install $2
     exit 0
 fi
@@ -35,7 +35,7 @@ if [ ${1} = "uninstall" ]; then
     exit 0
 fi
 
-if [ ${1} = "update" ]; then
+if [ ${1} = "update" ] || [ ${1} = "u" ]; then
     if [ ${2} = "self" ]; then
         setuptools-update
         exit 0
@@ -45,7 +45,7 @@ if [ ${1} = "update" ]; then
     exit 0
 fi
 
-if [ ${1} = "search" ]; then
+if [ ${1} = "search" ] || [ ${1} = "s" ]; then
     search_strategy $2
     exit 0
 fi
@@ -56,7 +56,7 @@ if [ ${1} = "configure" ]; then
     exit 0
 fi
 
-if [ ${1} = "help" ]; then
+if [ ${1} = "help" ] || [ ${1} = "h" ]; then
     setuptools-help
     exit 0
 fi
