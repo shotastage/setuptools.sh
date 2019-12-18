@@ -55,7 +55,13 @@ if [ ${1} = "search" ]; then
 fi
 
 if [ ${1} = "configure" ]; then
+    echo "🔄  Generating configuration..."
     configure
+    exit 0
+fi
+
+if [ ${1} = "help" ]; then
+    setuptools-help
     exit 0
 fi
 

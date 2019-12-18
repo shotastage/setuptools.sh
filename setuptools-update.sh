@@ -21,6 +21,8 @@ cp -rf ./lib/ $HOME/.setuptools/lib/
 cp -f setuptools.sh $HOME/.setuptools/bin/setuptools
 cp -f setuptools.sh $HOME/.setuptools/bin/uptool
 cp -f setuptools-update.sh $HOME/.setuptools/bin/setuptools-update
+cp -f setuptools-help.sh $HOME/.setuptools/bin/setuptools-help
+
 
 
 cd $HOME
