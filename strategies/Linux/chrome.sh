@@ -1,18 +1,13 @@
 #!/usr/bin/env bash
-
 STRATEGY_VERSION="v001"
 
 
 function install {
-    if [ -e /Applications/Google\ Chrome.app/ ]; then
-        echo "🖥  Chromeはすでにインストールされています."
-        return
-    fi
-    echo "⬇️  Chromeをインストールします."
-    echo "⬇️  ファイルをダウンロードしています..."
-    curl -OL "https://dl.google.com/chrome/mac/stable/CHFA/googlechrome.dmg"
-    if [ -e googlechrome.dmg ]; then
-        sudo dpkg -i google-chrome.deb
+    echo "⬇️  Downloading application..."
+    curl -OL "https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb"
+    if [ -e google-chrome-stable_current_amd64.deb ]; then
+        echo "⬇️  Installing application..."
+        sudo apt install ./google-chrome-stable_current_amd64.deb
     else
         echo "⚠️ パッケージのダウンロードに失敗しました！"
         echo "スクリプトを終了します [ Press Return to continue]"
@@ -22,12 +17,11 @@ function install {
 }
 
 function uninstall {
-    cd /Applications/
-    rm -rf Google\ Chrome.app
+    sudo apt-get remove google-chrome-stable --purge
 }
 
 function update {
-    echo "NOW UNDER CONSTRUCTION!"
+    sudo apt-get install google-chrome-stable -y
 }
 
 function main {
