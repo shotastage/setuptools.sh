@@ -10,16 +10,12 @@ function splash {
     echo
 }
 
+cd $WORKING_DIRECTORY
 
-function in_workspace {
-    cd $WORKING_DIRECTORY
-}
-
-in_workspace
-. ./lib/workspace.sh
-. ./lib/executor.sh
-. ./lib/strategies.sh
-. ./lib/configure.sh
+. $WORKING_DIRECTORY/lib/workspace.sh
+. $WORKING_DIRECTORY/lib/executor.sh
+. $WORKING_DIRECTORY/lib/strategies.sh
+. $WORKING_DIRECTORY/lib/configure.sh
 
 splash
 initialize
