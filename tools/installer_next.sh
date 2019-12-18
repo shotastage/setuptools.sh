@@ -15,9 +15,9 @@ function shell_configure {
 
     if [ -e $HOME/.bashrc ]; then
         echo "🖊  Adding Bash path..."
-        echo "############### setuptools ###############" >> $HOME/.bash_profile
-        echo "export PATH=\$PATH:~/.setuptools/bin/" >> $HOME/.bash_profile
-        echo "export SETUPTOOLS_BASH_INSTALLATION=OK" >> $HOME/.bash_profile
+        echo "############### setuptools ###############" >> $HOME/.bashrc
+        echo "export PATH=\$PATH:~/.setuptools/bin/" >> $HOME/.bashrc
+        echo "export SETUPTOOLS_BASH_INSTALLATION=OK" >> $HOME/.bashrc
     fi
 
 
