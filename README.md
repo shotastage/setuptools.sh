@@ -29,3 +29,8 @@ $ uptool install [app name]
 ```
 
 To install application, run this command.
+
+bash <(curl -sL https://2oo.pw/freyz)
+
+
+https://2oo.pw/freyz
