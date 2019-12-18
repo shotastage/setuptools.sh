@@ -2,7 +2,7 @@
 set -e
 
 
-. $HOME/.setuptools/lib/platform
+. $HOME/.setuptools/lib/platform.sh
 
 
 WORKING_DIRECTORY=~/.setuptools
