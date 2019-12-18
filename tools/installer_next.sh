@@ -40,9 +40,15 @@ function operating_system {
     echo $OS
 }
 
-function preparation_ubuntu {
-    sudo apt-get update -y
-    sudo apt-get install git -y
+function before_preparation {
+    if [ ${1} = "ubuntu" ]; then
+        if type git > /dev/null 2>&1; then
+            :
+        else
+            sudo apt-get update -y
+            sudo apt-get install git -y
+        fi
+    fi
 }
 
 
@@ -54,9 +60,9 @@ fi
 
 
 if [ -e $HOME/.setuptools_installation ]; then
-    echo "⚠️  Installation directory already exists!"
-    echo "⚠️  Clean existing directory before starting installation."
-    rm -rf .setuptools_installation/
+    echo "👻  Installation directory already exists!"
+    echo "👻  Clean existing directory before starting installation."
+    rm -rf $HOME/.setuptools_installation/
 fi
 
 
@@ -66,7 +72,7 @@ fi
 cd $HOME
 
 # Prepatation
-OS=$(operating_system)
+before_preparation $(operating_system)
 
 # Workspace preparation
 mkdir .setuptools_installation
@@ -77,8 +83,11 @@ git clone https://github.com/shotastage/setuptools.sh.git
 # Main Install Process
 cd setuptools.sh
 mkdir -p $HOME/.setuptools/bin/
+mkdir -p $HOME/.setuptools/lib/
 mkdir -p $HOME/.setuptools/config/
-mv setuptools.sh $HOME/.setuptools/bin/setuptools
+cp -rf ./lib/ $HOME/.setuptools/lib/
+cp -f setuptools.sh $HOME/.setuptools/bin/setuptools
+cp -f setuptools.sh $HOME/.setuptools/bin/uptool
 mv setuptools-update.sh $HOME/.setuptools/bin/setuptools-update
 
 # Shell Configuration
