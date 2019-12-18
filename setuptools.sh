@@ -5,7 +5,7 @@ WORKING_DIRECTORY=~/.setuptools
 
 
 function splash {
-    echo "setuptools 1.0.0"
+    echo "setuptools 1.1.0"
     echo "Copyright (C) 2019 Shota Shimazu, All rights reserved."
     echo
 }
