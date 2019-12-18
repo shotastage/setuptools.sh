@@ -1,6 +1,9 @@
 #!/usr/bin/env bash
 set -e
 
+
+##### Functions ##################################################################
+
 function shell_configure {
     if [ -e $HOME/.bash_profile ]; then
         echo "🖊  Adding Bash path..."
@@ -25,8 +28,25 @@ function shell_configure {
     fi
 }
 
+function operating_system {
+    if [ "$(uname)" == 'Darwin' ]; then
+        OS="macOS"
+    elif [ "$(expr substr $(uname -s) 1 5)" == 'Linux' ]; then
+        OS="Linux"
+    else
+        OS="Other"
+    fi
 
-# Check
+    echo $OS
+}
+
+function preparation_ubuntu {
+    sudo apt-get update -y
+    sudo apt-get install git -y
+}
+
+
+##### Check ######################################################################
 if [ -e $HOME/.setuptools/bin/ ]; then
     echo "👻 setuptools already installed!"
     exit 1
@@ -40,26 +60,35 @@ if [ -e $HOME/.setuptools_installation ]; then
 fi
 
 
-#In HOME root directory
+
+
+##### Main #######################################################################
 cd $HOME
 
+# Prepatation
+OS=$(operating_system)
+
+# Workspace preparation
 mkdir .setuptools_installation
 cd .setuptools_installation
 git clone https://github.com/shotastage/setuptools.sh.git
 
-# In clone directory
+
+# Main Install Process
 cd setuptools.sh
 mkdir -p $HOME/.setuptools/bin/
 mkdir -p $HOME/.setuptools/config/
 mv setuptools.sh $HOME/.setuptools/bin/setuptools
 mv setuptools-update.sh $HOME/.setuptools/bin/setuptools-update
 
-
+# Shell Configuration
 shell_configure
 
 
-
+# Cleaning
 echo "🧹  Cleaning..."
 cd
 rm -rf .setuptools_installation/
+
+# Completed!
 echo "🆗  Installation is completed!"

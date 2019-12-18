@@ -24,7 +24,6 @@ cp -f setuptools-update.sh $HOME/.setuptools/bin/setuptools-update
 cp -f setuptools-help.sh $HOME/.setuptools/bin/setuptools-help
 
 
-
 cd $HOME
 rm -rf .setuptools_update_tmp/
 echo "🆗  Update completed!"

@@ -2,8 +2,11 @@
 set -e
 
 
+. $HOME/.setuptools/lib/platform
+
+
 WORKING_DIRECTORY=~/.setuptools
-MASTER_URL="https://raw.githubusercontent.com/shotastage/setuptools.sh/master/strategies/macOS"
+MASTER_URL="https://raw.githubusercontent.com/shotastage/setuptools.sh/master/strategies/$(operating_system)"
 
 function execute {
     cd $WORKING_DIRECTORY/strategies/
