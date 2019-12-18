@@ -10,7 +10,7 @@ function install {
 }
 
 function uninstall {
-    brew uninstall mactex-no-gui
+    brew cask uninstall mactex-no-gui
 }
 
 function update {
