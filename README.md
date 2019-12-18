@@ -30,7 +30,11 @@ $ uptool install [app name]
 
 To install application, run this command.
 
+
+## Utilities
+
+### Uninstall setuptools
+
+```
 bash <(curl -sL https://2oo.pw/freyz)
-
-
-https://2oo.pw/freyz
+```
