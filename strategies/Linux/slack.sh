@@ -7,7 +7,7 @@ function install {
     curl -OL "https://downloads.slack-edge.com/linux_releases/slack-desktop-4.2.0-amd64.deb"
     if [ -e slack-desktop-4.2.0-amd64.deb ]; then
         echo "⬇️  Installing application..."
-        sudo dpkg -i slack-desktop-4.2.0-amd64.deb
+        sudo apt install ./slack-desktop-4.2.0-amd64.deb
     else
         echo "⚠️ パッケージのダウンロードに失敗しました！"
         echo "スクリプトを終了します [ Press Return to continue]"
@@ -17,11 +17,11 @@ function install {
 }
 
 function uninstall {
-    echo "NOW UNDER CONSTRUCTION."
+    sudo apt-get remove slack-desktop --purge
 }
 
 function update {
-    echo "NOW UNDER CONSTRUCTION."
+    sudo apt-get install slack-desktop -y
 }
 
 function main {
