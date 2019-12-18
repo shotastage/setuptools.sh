@@ -18,3 +18,14 @@ Just run above command.
 ### Ubuntu
 
 Install curl before running above command by `sudo apt install curl`
+
+
+## Usage
+
+### Install application
+
+```
+$ uptool install [app name]
+```
+
+To install application, run this command.
