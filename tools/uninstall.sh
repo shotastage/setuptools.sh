@@ -3,6 +3,7 @@
 if [ -e $HOME/.setuptools/ ]; then
     cd
     rm -rf .setuptools/
+    echo "Completely uninstalled setuptools."
     exit 0
 fi
 
