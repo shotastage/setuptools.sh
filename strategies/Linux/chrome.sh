@@ -14,6 +14,9 @@ function install {
         read
         exit 1
     fi
+
+    echo "🧹  Cleaning..."
+    rm -f google-chrome-stable_current_amd64.deb
 }
 
 function uninstall {

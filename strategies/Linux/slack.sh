@@ -14,6 +14,9 @@ function install {
         read
         exit 1
     fi
+
+    echo "🧹  Cleaning..."
+    rm -f slack-desktop-4.2.0-amd64.deb
 }
 
 function uninstall {
