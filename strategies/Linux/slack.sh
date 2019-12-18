@@ -1,7 +1,6 @@
 #!/usr/bin/env bash
 
 STRATEGY_VERSION="v001"
-CURRENT_ID="803453959"
 
 
 function install {
