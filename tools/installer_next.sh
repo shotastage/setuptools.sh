@@ -86,8 +86,7 @@ mkdir -p $HOME/.setuptools/bin/
 mkdir -p $HOME/.setuptools/lib/
 mkdir -p $HOME/.setuptools/config/
 mv ./lib/ $HOME/.setuptools/
-cp -f setuptools.sh $HOME/.setuptools/bin/setuptools
-cp -f setuptools.sh $HOME/.setuptools/bin/uptool
+cp -f uptool.sh $HOME/.setuptools/bin/uptool
 mv setuptools-update.sh $HOME/.setuptools/bin/setuptools-update
 
 # Shell Configuration
