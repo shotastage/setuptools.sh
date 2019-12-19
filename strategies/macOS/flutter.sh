@@ -29,7 +29,7 @@ function uninstall {
 }
 
 function update {
-    echo "Update strategy does not exists!"
+    flutter upgrade
 }
 
 function add_path {
