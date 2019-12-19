@@ -17,7 +17,7 @@ function update {
     echo "🍺  Homebrewをアップデートしています..."
     brew update
     echo "🍺  MacTexをアップデートしています..."
-    brew upgrade mactex-no-gui
+    brew cask upgrade mactex-no-gui
     echo "📃  MacTexのパッケージをアップデートしています..."
     sudo tlmgr update --self --all
 }
