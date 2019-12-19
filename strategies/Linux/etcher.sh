@@ -4,51 +4,26 @@ STRATEGY_VERSION="v001"
 
 
 function install {
-
-    echo "NOW UNDER CONSTRUCTION"
-    exit 1
-
-    if [ -e /Applications/balenaEtcher.app ]; then
-        echo "🖥  balenaEtcherはすでにインストールされています."
-        return
-    fi
-    echo "⬇️  balenaEtcherをインストールします."
-    echo "⬇️  ファイルをダウンロードしています..."
-    curl -OL "https://github.com/balena-io/etcher/releases/download/v1.5.70/balenaEtcher-1.5.70.dmg"
-    if [ -e balenaEtcher-1.5.70.dmg ]; then
-        echo "💿  イメージをマウントしています..."
-        hdiutil mount balenaEtcher-1.5.70.dmg >> /dev/null
-        echo "⬇️  アプリケーションをインストールしています..."
-        cp -r /Volumes/balenaEtcher\ 1.5.70/balenaEtcher.app /Applications/
-    else
-        echo "⚠️ パッケージのダウンロードに失敗しました！"
-        echo "スクリプトを終了します [ Press Return to continue]"
-        read
-        exit 1
-    fi
-
-    echo "💿  イメージをアンマウントしています..."
-    umount /Volumes/balenaEtcher\ 1.5.70/ >> /dev/null
-    echo "🧹  クリーンアップしています..."
-    rm balenaEtcher-1.5.70.dmg
+    echo "🖊  Adding APT repositories..."
+    echo "deb https://deb.etcher.io stable etcher" | sudo tee /etc/apt/sources.list.d/balena-etcher.list
+    echo "⬇️  Installing key..."
+    sudo apt-key adv --keyserver keyserver.ubuntu.com --recv-keys 379CE192D401AB61
+    echo "🔑  sudo Password is required!"
+    echo "🔄 Updating APT index..."
+    sudo apt-get -qq -y update
+    echo "⬇️ Installing balenaEtcher..."
+    sudo apt-get -qq -y install balena-etcher-electron
+    echo "🐤  Installation completed!"
 }
 
 function uninstall {
-
-    echo "NOW UNDER CONSTRUCTION"
-    exit 1
-    
-    cd /Applications/
-    echo "🧹  Removing appliation..."
-    rm -rf balenaEtcher.app
-    echo "🧹  Cleaning remaining files..."
-    rm -rf ~/Library/Preferences/io.balena.etcher.plist
-    rm -rf ~/Library/Saved Application State/io.balena.etcher.savedState
-    echo "🧹  Uninstall completed!"
+    sudo apt-get remove balena-etcher-electron
+    sudo rm /etc/apt/sources.list.d/balena-etcher.list
+    sudo apt-get update
 }
 
 function update {
-    echo "NOW UNDER CONSTRUCTION."
+    sudo apt-get install balena-etcher-electron -y
 }
 
 function main {
