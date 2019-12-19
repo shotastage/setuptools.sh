@@ -2,28 +2,43 @@
 set -e
 
 
+WORKSPACE=~/.setuptools_update_tmp/
+
+preapre_tmp() {
+    cd $HOME
+
+    if [ -e $WORKSPACE ]; then
+        rm -rf $WORKSPACE
+    fi
+
+    mkdir $WORKSPACE
+}
+
+download() {
+    echo "⬇️  Downloading newest package..."
+    git clone --quiet https://github.com/shotastage/setuptools.sh.git $WORKSPACE/netinst/ >> /dev/null
+}
+
+destory_old() {
+    rm -rf $HOME/.setuptools/lib/
+    rm -rf $HOME/.setuptools/bin/
+}
+
+install_new() {
+    cp -rf $WORKSPACE/netinst/lib/ $HOME/.setuptools/lib/
+    cp -f $WORKSPACE/netinst/setuptools.sh $HOME/.setuptools/bin/uptool
+    cp -f $WORKSPACE/netinst/setuptools-update.sh $HOME/.setuptools/bin/setuptools-update
+    cp -f $WORKSPACE/netinst/setuptools-help.sh $HOME/.setuptools/bin/setuptools-help
+}
+
 # PREPARE
 cd $HOME
-if [ -e .setuptools_update_tmp/ ]; then
-    echo "Update temporary already exists! Remove this directory before starting update."
-    rm -rf .setuptools_update_tmp/
-fi
-mkdir .setuptools_update_tmp
-cd .setuptools_update_tmp
 
-echo "⬇️  Downloading newest package..."
-git clone --quiet https://github.com/shotastage/setuptools.sh.git >> /dev/null
-cd setuptools.sh
-
-
-rm -rf $HOME/.setuptools/lib/
-
+preapre_tmp
+download
 echo "🔄  Updating setuptools..."
-cp -rf ./lib/ $HOME/.setuptools/lib/
-cp -f setuptools.sh $HOME/.setuptools/bin/setuptools
-cp -f setuptools.sh $HOME/.setuptools/bin/uptool
-cp -f setuptools-update.sh $HOME/.setuptools/bin/setuptools-update
-cp -f setuptools-help.sh $HOME/.setuptools/bin/setuptools-help
+destory_old
+install_new
 
 
 cd $HOME
