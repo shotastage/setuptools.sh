@@ -70,6 +70,10 @@ do
             cat $WORKING_DIRECTORY/exec_user_log
             exit 0
             ;;
+        --show-cached-strategies )
+            ls $WORKING_DIRECTORY/strategies/
+            exit 0
+            ;;
         --clear-strategies )
             cat $WORKING_DIRECTORY/exec_user_log
             exit 0
