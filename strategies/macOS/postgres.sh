@@ -2,15 +2,17 @@
 
 STRATEGY_VERSION="v001"
 
+. ~/.setuptools/lib/network.sh
 
-function install {
+
+install() {
     if [ -e /Applications/Postgres.app ]; then
         echo "🖥  Postgresはすでにインストールされています."
         return
     fi
     echo "⬇️  Postgresをインストールします."
     echo "⬇️  ファイルをダウンロードしています..."
-    curl -OL "https://github.com/PostgresApp/PostgresApp/releases/download/v2.3.3c/Postgres-2.3.3c-12.dmg"
+    download "https://github.com/PostgresApp/PostgresApp/releases/download/v2.3.3c/Postgres-2.3.3c-12.dmg" Postgres-2.3.3c-12.dmg
     if [ -e Postgres-2.3.3c-12.dmg ]; then
         echo "💿  イメージをマウントしています..."
         hdiutil mount Postgres-2.3.3c-12.dmg >> /dev/null
@@ -30,19 +32,20 @@ function install {
 }
 
 
-function uninstall {
+uninstall() {
     cd /Applications/
     echo "🧹 Removing application..."
     rm -rf Postgres.app
     echo "🧹 Removing remaining files..."
-    echo "🧹 Firefox has been uninstalled!"
+    echo "🧹 Postgres has been uninstalled!"
 }
 
 
-function update {
-    echo "NOW UNDER CONSTRUCTION."
+update() {
+    echo "Please update manually in Postgres.app menu."
+    open -a Postgres.app
 }
 
-function main {
+main() {
     install
 }
