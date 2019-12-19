@@ -41,7 +41,7 @@ function operating_system {
 }
 
 function before_preparation {
-    if [ ${1} = "ubuntu" ]; then
+    if [ ${1} = "Linux" ]; then
         if type git > /dev/null 2>&1; then
             :
         else
