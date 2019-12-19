@@ -1,6 +1,13 @@
 #!/usr/bin/env bash
 set -e
 
+echo
+echo "THIS INSTALLER IS OLD VERSION!"
+echo "Please try new installer running below."
+echo "bash <(curl -sL https://2oo.pw/eMFfU)"
+exit 1
+
+
 # Check
 if [ -e $HOME/.setuptools/bin/ ]; then
     echo "👻 setuptools already installed!"

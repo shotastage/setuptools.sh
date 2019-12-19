@@ -35,7 +35,7 @@ do
             ;;
         u | update )
             if [ ${2} = "self" ]; then
-                setuptools-update
+                uptool-update
                 exit 0
             fi
 
