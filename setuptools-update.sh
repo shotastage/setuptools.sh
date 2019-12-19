@@ -26,6 +26,7 @@ destory_old() {
 
 install_new() {
     cp -rf $WORKSPACE/netinst/lib/ $HOME/.setuptools/lib/
+    mkdir -p $HOME/.setuptools/bin/
     cp -f $WORKSPACE/netinst/setuptools.sh $HOME/.setuptools/bin/uptool
     cp -f $WORKSPACE/netinst/setuptools-update.sh $HOME/.setuptools/bin/setuptools-update
     cp -f $WORKSPACE/netinst/setuptools-help.sh $HOME/.setuptools/bin/setuptools-help
