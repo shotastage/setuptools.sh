@@ -4,7 +4,7 @@ set -e
 WORKING_DIRECTORY=~/.setuptools
 
 
-function splash {
+splash() {
     echo "setuptools 1.1.0"
     echo "Copyright (C) 2019 Shota Shimazu, All rights reserved."
     echo
@@ -58,6 +58,14 @@ fi
 
 if [ ${1} = "help" ] || [ ${1} = "h" ]; then
     setuptools-help
+    exit 0
+fi
+
+if [ ${1} = "version" ] || [ ${1} = "v" ]; then
+    echo
+    echo "setuptools 1.1.0"
+    echo "Copyright (C) 2019 Shota Shimazu, All rights reserved."
+    echo 
     exit 0
 fi
 
