@@ -31,6 +31,19 @@ $ uptool install [app name]
 To install application, run this command.
 
 
+### Upate application
+
+```
+$ uptool upate [app name]
+```
+
+### Uninstall application
+
+```
+$ uptool uninstall [app name]
+```
+
+
 ## Utilities
 
 ### Uninstall setuptools
