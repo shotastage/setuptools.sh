@@ -18,6 +18,10 @@ function execute {
         install
     fi
 
+    if [ ${1} = "update" ]; then
+        update
+    fi
+
     if [ ${1} = "uninstall" ]; then
         uninstall
     fi
