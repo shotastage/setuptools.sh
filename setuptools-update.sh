@@ -2,7 +2,7 @@
 set -e
 
 
-WORKSPACE=~/.setuptools_update_tmp/
+WORKSPACE=~/.setuptools_update_tmp
 
 preapre_tmp() {
     cd $HOME
