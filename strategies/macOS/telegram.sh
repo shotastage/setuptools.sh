@@ -3,6 +3,10 @@
 STRATEGY_VERSION="v001"
 
 
+. ~/.setuptools/lib/foundation.sh
+. ~/.setuptools/lib/network.sh
+
+
 function install {
     if [ -e /Applications/Telegram.app ]; then
         echo "🖥  Telegramはすでにインストールされています."
@@ -13,7 +17,7 @@ function install {
     curl -OL "https://osx.telegram.org/updates/TelegramMac.dmg"
     if [ -e TelegramMac.dmg ]; then
         echo "💿  イメージをマウントしています..."
-        hdiutil mount TelegramMac.dmg >> /dev/null
+        dmgTelegramMac.dmg
         echo "⬇️  アプリケーションをインストールしています..."
         cp -r /Volumes/Telegram/Telegram.app /Applications/
     else
@@ -24,7 +28,7 @@ function install {
     fi
 
     echo "💿  イメージをアンマウントしています..."
-    umount /Volumes/Telegram/ >> /dev/null
+    defer_dmg Telegram
     echo "🧹  クリーンアップしています..."
     rm TelegramMac.dmg
 }
