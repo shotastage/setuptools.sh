@@ -33,12 +33,12 @@ function install {
 function uninstall {
     cd /Applications/
     echo "🧹 Removing application..."
-    rm -rf Firefox.app
+    rm -rf Telegram.app
     echo "🧹 Removing remaining files..."
-    rm -rf ~/Library/Application\ Support/Firefox/
-    rm -rf ~/Library/Caches/Firefox/
-    rm -f ~/Library/Preferences/org.mozilla.firefox.plist
-    echo "🧹 Firefox has been uninstalled!"
+    # rm -rf ~/Library/Application\ Support/Firefox/
+    # rm -rf ~/Library/Caches/Firefox/
+    # rm -f ~/Library/Preferences/org.mozilla.firefox.plist
+    echo "🧹 Telegram has been uninstalled!"
 }
 
 
