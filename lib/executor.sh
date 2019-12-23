@@ -8,7 +8,7 @@ set -e
 WORKING_DIRECTORY=~/.setuptools
 MASTER_URL="https://raw.githubusercontent.com/shotastage/setuptools.sh/master/strategies/$(operating_system)"
 
-function execute {
+execute() {
     cd $WORKING_DIRECTORY/strategies/
     curl --silent -O "${MASTER_URL}/${2}.sh"
     chmod +x ${2}.sh
@@ -25,4 +25,14 @@ function execute {
     if [ ${1} = "uninstall" ]; then
         uninstall
     fi
+}
+
+
+exetask() {
+    $WORKING_DIRECTORY/strategies/
+    curl --silent "${MASTER_URL}/${2}.sh" -o $WORKING_DIRECTORY/tasks/${2}.sh
+    chmod +x $WORKING_DIRECTORY/tasks/${2}.sh
+    . $WORKING_DIRECTORY/tasks/${2}.sh
+
+    uptask
 }
