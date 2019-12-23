@@ -1,20 +1,10 @@
-#!/usr/bin/env bash
+#!/usr/bin/env sh
 set -e
 
 
 ##### Functions ##################################################################
 
-function shell_configure {
-    if [ -e $HOME/.bashrc ]; then
-        echo "🖊  Adding Bash path..."
-    fi
-}
 
-
-function before_preparation {
-    sudo apt-get update -y
-    sudo apt-get install git -y
-}
 
 
 ##### Check ######################################################################
@@ -34,6 +24,10 @@ fi
 
 
 ##### Main #######################################################################
+
+sudo apt-get update -y
+sudo apt-get install git curl bash -y
+
 cd $HOME
 
 # Prepatation
