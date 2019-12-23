@@ -7,6 +7,8 @@ set -e
 
 WORKING_DIRECTORY=~/.setuptools
 MASTER_URL="https://raw.githubusercontent.com/shotastage/setuptools.sh/master/strategies/$(operating_system)"
+TASK_MASTER_URL="https://raw.githubusercontent.com/shotastage/setuptools.sh/master/tasks/$(operating_system)"
+
 
 execute() {
     cd $WORKING_DIRECTORY/strategies/
@@ -41,7 +43,7 @@ exetask() {
         mkdir $WORKING_DIRECTORY/tasks/
     fi
 
-    curl --silent "${MASTER_URL}/${1}.sh" -o $WORKING_DIRECTORY/tasks/${1}.sh
+    curl --silent "${TASK_MASTER_URL}/${1}.sh" -o $WORKING_DIRECTORY/tasks/${1}.sh
     chmod +x $WORKING_DIRECTORY/tasks/${1}.sh
     . $WORKING_DIRECTORY/tasks/${1}.sh
 
