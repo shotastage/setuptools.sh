@@ -41,9 +41,9 @@ exetask() {
         mkdir $WORKING_DIRECTORY/tasks/
     fi
 
-    curl --silent "${MASTER_URL}/${2}.sh" -o $WORKING_DIRECTORY/tasks/${2}.sh
-    chmod +x $WORKING_DIRECTORY/tasks/${2}.sh
-    . $WORKING_DIRECTORY/tasks/${2}.sh
+    curl --silent "${MASTER_URL}/${1}.sh" -o $WORKING_DIRECTORY/tasks/${1}.sh
+    chmod +x $WORKING_DIRECTORY/tasks/${1}.sh
+    . $WORKING_DIRECTORY/tasks/${1}.sh
 
     uptask
 }
