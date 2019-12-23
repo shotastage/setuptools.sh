@@ -11,7 +11,7 @@ function install {
 }
 
 function uninstall {
-    mas uninstall $CURRENT_ID
+    sudo mas uninstall $CURRENT_ID
 }
 
 function update {
