@@ -7,7 +7,7 @@ set -e
 
 WORKING_DIRECTORY=~/.setuptools
 MASTER_URL="https://raw.githubusercontent.com/shotastage/setuptools.sh/master/strategies/$(operating_system)"
-TASK_MASTER_URL="https://raw.githubusercontent.com/shotastage/setuptools.sh/master/tasks/$(operating_system)"
+TASK_MASTER_URL="https://raw.githubusercontent.com/shotastage/setuptools.sh/master/task/$(operating_system)"
 
 
 execute() {
