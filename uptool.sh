@@ -44,6 +44,10 @@ do
             search_strategy $2
             exit 0
             ;;
+        t | task )
+            exetask $2
+            exit 0
+            ;;
         uninstall )
             execute uninstall $2
             exit 0
