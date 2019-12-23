@@ -29,6 +29,11 @@ execute() {
 
 
 exetask() {
+
+    if [ ! -e $WORKING_DIRECTORY/strategies/ ]; then
+        mkdir $WORKING_DIRECTORY/tasks/
+    fi
+
     curl --silent "${MASTER_URL}/${2}.sh" -o $WORKING_DIRECTORY/tasks/${2}.sh
     chmod +x $WORKING_DIRECTORY/tasks/${2}.sh
     . $WORKING_DIRECTORY/tasks/${2}.sh
