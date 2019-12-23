@@ -8,13 +8,10 @@ splash() {
     echo
 }
 
-cd $WORKING_DIRECTORY
-
 . $WORKING_DIRECTORY/lib/workspace.sh
 . $WORKING_DIRECTORY/lib/executor.sh
 . $WORKING_DIRECTORY/lib/strategies.sh
 . $WORKING_DIRECTORY/lib/configure.sh
-
 
 
 
