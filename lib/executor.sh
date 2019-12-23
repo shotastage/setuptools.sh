@@ -36,8 +36,8 @@ exetask() {
     echo "WARNING"
     echo "This feature is now under construction. Please be careful."
     echo
-    
-    if [ ! -e $WORKING_DIRECTORY/strategies/ ]; then
+
+    if [ ! -e $WORKING_DIRECTORY/tasks/ ]; then
         mkdir $WORKING_DIRECTORY/tasks/
     fi
 
