@@ -12,5 +12,5 @@ function uptask() {
 
     echo "🖊  Writing contents..."
     echo "########## Upfile ##########" >> ./Upfile
-    echo "Strategies="
+    echo "declare -a strategies=(\"\" )"
 }
