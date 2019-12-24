@@ -32,7 +32,7 @@ function install {
 
 function uninstall {
     cd /Applications/
-    rm -rf Google\ Chrome.app
+    rm -rf Skype.app
 }
 
 function update {
