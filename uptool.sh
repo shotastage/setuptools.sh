@@ -70,7 +70,7 @@ do
             exit 0
             ;;
         --show-cached-strategies )
-            ls $WORKING_DIRECTORY/strategies/
+            list_strategies
             exit 0
             ;;
         --clear-strategies )

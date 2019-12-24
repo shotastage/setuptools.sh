@@ -13,6 +13,11 @@ search_strategy() {
     fi
 }
 
+list_strategies() {
+    for fname in $HOME/.setuptools/strategies/*.sh; do
+        echo $fname | sed "s/\.sh$//g"
+    done
+}
 
 clear_strategies() {
     for fname in $HOME/.setuptools/strategies/*.sh; do
