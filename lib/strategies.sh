@@ -20,8 +20,7 @@ list_strategies() {
     echo
 
     for fname in $HOME/.setuptools/strategies/*.sh; do
-        faname_ext="${fname##*/}"
-        echo "${fname_ext%.*}"        
+        find $fname -type f | sed 's!^.*/!!'    
     done
 }
 
