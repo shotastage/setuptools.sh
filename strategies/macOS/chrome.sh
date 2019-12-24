@@ -25,7 +25,7 @@ function install {
     fi
 
     echo "💿  イメージをアンマウントしています..."
-    defer_dmg Google\ Chrome
+    defer_dmg "Google Chrome"
     echo "🧹  クリーンアップしています..."
     rm googlechrome.dmg
 }
