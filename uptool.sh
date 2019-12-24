@@ -74,7 +74,7 @@ do
             exit 0
             ;;
         --clear-strategies )
-            cat $WORKING_DIRECTORY/exec_user_log
+            clear_strategies
             exit 0
             ;;
     esac
