@@ -14,11 +14,6 @@ search_strategy() {
 }
 
 list_strategies() {
-
-    echo
-    echo "UNDER DEVELOPMENT"
-    echo
-
     for fname in $HOME/.setuptools/strategies/*.sh; do
         basename $fname .sh
     done
