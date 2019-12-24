@@ -20,7 +20,7 @@ list_strategies() {
     echo
 
     for fname in $HOME/.setuptools/strategies/*.sh; do
-        find $fname -type f | sed 's!^.*/!!'    
+        basename $fname .sh
     done
 }
 
