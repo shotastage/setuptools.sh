@@ -17,7 +17,7 @@ function install {
     curl -OL "https://osx.telegram.org/updates/TelegramMac.dmg"
     if [ -e TelegramMac.dmg ]; then
         echo "💿  イメージをマウントしています..."
-        dmgTelegramMac.dmg
+        dmg TelegramMac.dmg
         echo "⬇️  アプリケーションをインストールしています..."
         cp -r /Volumes/Telegram/Telegram.app /Applications/
     else

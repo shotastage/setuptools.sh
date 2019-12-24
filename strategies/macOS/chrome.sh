@@ -2,6 +2,7 @@
 
 STRATEGY_VERSION="v001"
 
+. ~/.setuptools/lib/foundation.sh
 
 function install {
     if [ -e /Applications/Google\ Chrome.app/ ]; then
@@ -13,7 +14,7 @@ function install {
     curl -OL "https://dl.google.com/chrome/mac/stable/CHFA/googlechrome.dmg"
     if [ -e googlechrome.dmg ]; then
         echo "💿  イメージをマウントしています..."
-        hdiutil mount googlechrome.dmg >> /dev/null
+        dmg googlechrome.dmg
         echo "⬇️  アプリケーションをインストールしています..."
         cp -r /Volumes/Google\ Chrome/Google\ Chrome.app /Applications/
     else
@@ -24,7 +25,7 @@ function install {
     fi
 
     echo "💿  イメージをアンマウントしています..."
-    umount /Volumes/Google\ Chrome/ >> /dev/null
+    defer_dmg Google\ Chrome
     echo "🧹  クリーンアップしています..."
     rm googlechrome.dmg
 }

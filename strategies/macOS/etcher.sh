@@ -2,6 +2,7 @@
 
 STRATEGY_VERSION="v001"
 
+. ~/.setuptools/lib/foundation.sh
 
 function install {
     if [ -e /Applications/balenaEtcher.app ]; then
@@ -13,7 +14,7 @@ function install {
     curl -OL "https://github.com/balena-io/etcher/releases/download/v1.5.70/balenaEtcher-1.5.70.dmg"
     if [ -e balenaEtcher-1.5.70.dmg ]; then
         echo "💿  イメージをマウントしています..."
-        hdiutil mount balenaEtcher-1.5.70.dmg >> /dev/null
+        dmg balenaEtcher-1.5.70.dmg
         echo "⬇️  アプリケーションをインストールしています..."
         cp -r /Volumes/balenaEtcher\ 1.5.70/balenaEtcher.app /Applications/
     else
@@ -24,7 +25,7 @@ function install {
     fi
 
     echo "💿  イメージをアンマウントしています..."
-    umount /Volumes/balenaEtcher\ 1.5.70/ >> /dev/null
+    defer_dmg balenaEtcher\ 1.5.70
     echo "🧹  クリーンアップしています..."
     rm balenaEtcher-1.5.70.dmg
 }
