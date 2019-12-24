@@ -7,7 +7,7 @@ function uptask() {
     mkdir $pjname
     cd $pjname
     git init
-    echo "${$pjname}" >> README.md
+    echo "${pjname}" >> README.md
     echo "==========" >> README.md
     echo "Project description is here"
 }
