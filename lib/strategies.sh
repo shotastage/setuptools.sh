@@ -15,7 +15,8 @@ search_strategy() {
 
 list_strategies() {
     for fname in $HOME/.setuptools/strategies/*.sh; do
-        echo $fname | sed "s/\.sh$//g"
+        faname_ext="${fname##*/}"
+        echo "${fname_ext%.*}"        
     done
 }
 
