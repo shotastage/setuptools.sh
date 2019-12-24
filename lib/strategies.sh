@@ -14,6 +14,11 @@ search_strategy() {
 }
 
 list_strategies() {
+
+    echo
+    echo "UNDER DEVELOPMENT"
+    echo
+
     for fname in $HOME/.setuptools/strategies/*.sh; do
         faname_ext="${fname##*/}"
         echo "${fname_ext%.*}"        
