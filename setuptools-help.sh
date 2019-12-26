@@ -3,7 +3,7 @@ set -e
 
 
 echo
-echo "Setuptools v1.0.0"
+echo "Setuptools v1.1.0"
 echo
 echo "install [package]                  Install or setup new package."
 echo "search  [package]                  Search setup strategies."

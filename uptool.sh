@@ -25,7 +25,7 @@ prepare_workspace
 for OPT in "$@"
 do
     case $OPT in
-        i | install )
+        i | install | add )
             execute install $2
             exit 0
             ;;
@@ -46,11 +46,11 @@ do
             exetask $2
             exit 0
             ;;
-        uninstall )
+        uninstall | remove )
             execute uninstall $2
             exit 0
             ;;
-        configure )
+        cfg | configure )
             echo "🔄  Generating configuration..."
             configure
             exit 0
