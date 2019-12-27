@@ -1,12 +1,5 @@
 #!/usr/bin/env bash
 
-uptask() {
-    if [ -e ./.vscode/settings.json ]; then
-        mv ./.vscode/settings.json ./.vscode/settings-backup.json
-    fi
-
-    echo CONTENT >> ./.vscode/settings.json
-}
 
 
 CONTENT=$(cat << EOS
@@ -49,4 +42,14 @@ CONTENT=$(cat << EOS
 }
 EOS
 )
+
+
+
+uptask() {
+    if [ -e ./.vscode/settings.json ]; then
+        mv ./.vscode/settings.json ./.vscode/settings-backup.json
+    fi
+
+    echo $CONTENT >> ./.vscode/settings.json
+}
 
