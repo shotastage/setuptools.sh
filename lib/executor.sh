@@ -16,9 +16,9 @@ execute() {
     curl --silent -O "${MASTER_URL}/${2}.sh"
     chmod +x ${2}.sh
 
-    verify_script ${2}.sh
+    verify_script ${2}.sh "https://raw.githubusercontent.com/shotastage/setuptools.sh/master/strategies/$(operating_system)/signatures/${1}.sh.sig"
 
-    
+
     . ${2}.sh
 
     if [ ${1} = "install" ]; then
