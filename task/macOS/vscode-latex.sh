@@ -48,6 +48,8 @@ EOS
 uptask() {
     if [ -e ./.vscode/settings.json ]; then
         mv ./.vscode/settings.json ./.vscode/settings-backup.json
+    else
+        mkdir .vscode/
     fi
 
     echo $CONTENT >> ./.vscode/settings.json
