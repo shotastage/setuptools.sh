@@ -9,7 +9,7 @@ verify_script() {
     gpg --quiet --verify $1.sig $1 2>/dev/null
 
     if [ $? -eq 0 ]; then
-        echo "🔑  Script is valid."
+        echo "" >> /dev/null
     else
         echo "❌  Invalid signature!"
         exit 1
