@@ -3,7 +3,7 @@
 
 master_cmd() {
     if [ ${1} = "sign" ]; then
-        sign_master
+        echo "SSSS"
     fi
 }
 
