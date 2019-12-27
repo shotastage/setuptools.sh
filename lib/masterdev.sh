@@ -17,6 +17,26 @@ sign_master() {
         echo "🔑  Signinig task ${fname} ..."
         gpg --batch --yes -u 86133173EF57B60825297D8C374773E889C0E769 -b $fname
     done
+
+    for fname in ./strategies/macOS/*.sh; do
+        echo "🔑  Indexing macOS strategy signature ${fname} ..."
+        mv $fname ./strategies/macOS/signatures/
+    done
+
+    for fname in ./task/macOS/*.sh; do
+        echo "🔑  Indexing macOS task signature ${fname} ..."
+        mv $fname ./task/macOS/signatures/
+    done
+
+    for fname in ./strategies/Linux/*.sh; do
+        echo "🔑  Indexing Linux strategy signature ${fname} ..."
+        mv $fname ./strategies/Linux/signatures/
+    done
+
+    for fname in ./strategies/Linux/*.sh; do
+        echo "🔑  Indexing Linux task signature ${fname} ..."
+        mv $fname ./task/macOS/signatures/
+    done
 }
 
 
