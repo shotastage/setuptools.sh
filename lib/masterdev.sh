@@ -10,12 +10,26 @@ master_cmd() {
 sign_master() {
     for fname in ./strategies/**/*.sh; do
         echo "🔑  Signinig strategy ${fname} ..."
-        gpg --batch --yes -u 86133173EF57B60825297D8C374773E889C0E769 -b $fname
+
+        gpg --quiet --verify $fname.sig $fname 2>/dev/null
+
+        if [ $? -eq 0 ]; then
+            echo "🔑  $fname is already verifeid."
+        else
+            gpg --batch --yes -u 86133173EF57B60825297D8C374773E889C0E769 -b $fname
+        fi
     done
 
     for fname in ./task/**/*.sh; do
-        echo "🔑  Signinig task ${fname} ..."
-        gpg --batch --yes -u 86133173EF57B60825297D8C374773E889C0E769 -b $fname
+        echo "🔑  Signinig strategy ${fname} ..."
+
+        gpg --quiet --verify $fname.sig $fname 2>/dev/null
+
+        if [ $? -eq 0 ]; then
+            echo "🔑  $fname is already verifeid."
+        else
+            gpg --batch --yes -u 86133173EF57B60825297D8C374773E889C0E769 -b $fname
+        fi
     done
 
     for fname in ./strategies/macOS/*.sh; do
