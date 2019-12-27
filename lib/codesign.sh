@@ -1,9 +1,5 @@
 #!/usr/bin/env bash
 
-#!/usr/bin/env bash
-
-set -e
-
 
 verify_script() {
     echo "🔑  Verifying script..."
