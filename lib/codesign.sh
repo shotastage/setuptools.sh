@@ -10,8 +10,11 @@ verify_script() {
 
     curl --silent -O $2 >> /dev/null
 
-    if [ ! "`gpg --verify $1.sig $1 | grep 'Good signature'`" ]; then
-        echo "❌  Bad signature! "
+        
+    LANG=C LC_MESSAGES=C gpg --verify $1.sig $1 2>&1 | grep WARNING > /dev/null
+    if [[ "${PIPESTATUS[0]} ${PIPESTATUS[1]}" == "0 1" ]]; then
+        exit 0
+    else
         exit 1
     fi
 }
