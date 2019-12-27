@@ -8,6 +8,10 @@ set -e
 verify_script() {
     echo "🔑  Verifying script..."
 
+
+    echo $1
+    echo $2
+
     curl -o $2
 
     if [ ! "`gpg --verify $2 $1 | grep 'Good signature'`" ]; then
