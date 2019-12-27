@@ -12,7 +12,7 @@ verify_script() {
     echo $1
     echo $2
 
-    curl -o $2
+    curl -O $2
 
     if [ ! "`gpg --verify $2 $1 | grep 'Good signature'`" ]; then
         echo "❌  Bad signature! "
