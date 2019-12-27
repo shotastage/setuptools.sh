@@ -13,6 +13,7 @@ splash() {
 . $WORKING_DIRECTORY/lib/strategies.sh
 . $WORKING_DIRECTORY/lib/tasks.sh
 . $WORKING_DIRECTORY/lib/configure.sh
+. $WORKING_DIRECTORY/lib/codesign.sh
 
 
 
@@ -85,6 +86,10 @@ do
             ;;
         --clear-tasks )
             clear_tasks
+            exit 0
+            ;;
+        --dev-master-sign )
+            sign_master
             exit 0
             ;;
     esac
