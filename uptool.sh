@@ -91,7 +91,7 @@ do
         --dev-master )
             echo "Plase type master development command:"
             read $master_dev_cmd
-
+            master_cmd $master_dev_cmd
             exit 0
             ;;
     esac
