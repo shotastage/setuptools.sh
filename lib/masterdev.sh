@@ -34,22 +34,31 @@ sign_master() {
 
     for fname in ./strategies/macOS/*.sh; do
         echo "🔑  Indexing macOS strategy signature ${fname} ..."
-        mv $fname.sig ./strategies/macOS/signatures/
+        if [ -e $fname.sig ]; then
+            mv $fname.sig ./strategies/macOS/signatures/
+        fi
     done
 
     for fname in ./task/macOS/*.sh; do
         echo "🔑  Indexing macOS task signature ${fname} ..."
-        mv $fname.sig ./task/macOS/signatures/
+
+        if [ -e $fname.sig ]; then
+            mv $fname.sig ./task/macOS/signatures/
+        fi
     done
 
     for fname in ./strategies/Linux/*.sh; do
         echo "🔑  Indexing Linux strategy signature ${fname} ..."
-        mv $fname.sig ./strategies/Linux/signatures/
+        if [ -e $fname.sig ]; then
+            mv $fname.sig ./strategies/Linux/signatures/
+        fi
     done
 
     for fname in ./task/Linux/*.sh; do
         echo "🔑  Indexing Linux task signature ${fname} ..."
-        mv $fname.sig ./task/Linux/signatures/
+        if [ -e $fname.sig ]; then
+            mv $fname.sig ./task/Linux/signatures/
+        fi
     done
 }
 
