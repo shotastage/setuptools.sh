@@ -2,8 +2,8 @@
 
 STRATEGY_VERSION="v001"
 
-. ../lib/toolchain.sh
-. ../lib/fish.sh
+. ~/.setuptools/lib/toolchain.sh
+. ~/.setuptools/lib/fish.sh
 
 function install {
     echo "⬇️  Downloading package..."
