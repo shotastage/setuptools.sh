@@ -33,7 +33,7 @@ sign_master() {
         mv $fname.sig ./strategies/Linux/signatures/
     done
 
-    for fname in ./strategies/Linux/*.sh; do
+    for fname in ./task/Linux/*.sh; do
         echo "🔑  Indexing Linux task signature ${fname} ..."
         mv $fname.sig ./task/Linux/signatures/
     done
