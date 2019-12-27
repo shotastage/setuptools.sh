@@ -29,5 +29,5 @@ sign_master() {
 
 
 clear_sign_master() {
-    
+    echo "None"
 }
