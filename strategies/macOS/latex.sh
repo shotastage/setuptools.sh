@@ -3,17 +3,17 @@
 STRATEGY_VERSION="v001"
 
 
-function install {
+install() {
     install_required_pkg
     setup_mactex
     vscode
 }
 
-function uninstall {
+uninstall() {
     brew cask uninstall mactex-no-gui
 }
 
-function update {
+update() {
     echo "🍺  Homebrewをアップデートしています..."
     brew update
     echo "🍺  MacTexをアップデートしています..."
@@ -23,14 +23,14 @@ function update {
 }
 
 
-function install_required_pkg {
+install_required_pkg() {
     echo "🍺  Homebrewをアップデートしています...."
     brew update
     echo "🍺  MacTexをインストールしています..."
     brew cask install mactex-no-gui
 }
 
-function setup_mactex {
+setup_mactex() {
     echo "📃  パスを設定しています..."
     /usr/local/texlive/2019/bin/x86_64-darwin/tlmgr path add
     echo "📃  MacTexのパッケージをアップデートしています..."
@@ -39,14 +39,14 @@ function setup_mactex {
     sudo tlmgr paper a4
 }
 
-function vscode {
+vscode() {
     if [ -e /Applications/Visual\ Studio\ Code.app ]; then
         echo "⬇️  TexWorkshopをインストールしています..."
         /Applications/Visual\ Studio\ Code.app/Contents/Resources/app/bin/code --install-extension james-yu.latex-workshop
     fi
 }
 
-function main {
+main() {
     install_required_pkg
     setup_mactex
     vscode
