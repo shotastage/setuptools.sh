@@ -8,7 +8,7 @@ verify_script() {
        
     LANG=C LC_MESSAGES=C gpg --verify $1.sig $1 2>&1 | grep WARNING > /dev/null
     if [[ "${PIPESTATUS[0]} ${PIPESTATUS[1]}" == "0 1" ]]; then
-        echo ""
+        echo "AAAAA"
     else
         echo "❌  Bad signature! "
         exit 1
