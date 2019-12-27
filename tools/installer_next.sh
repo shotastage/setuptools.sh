@@ -20,6 +20,13 @@ function shell_configure {
         echo "export SETUPTOOLS_BASH_INSTALLATION=OK" >> $HOME/.bashrc
     fi
 
+    if [ -e $HOME/.zshenv ]; then
+        echo "🖊  Adding Zsh path..."
+        echo "############### setuptools ###############" >> $HOME/.zshenv
+        echo "export PATH=\$PATH:~/.setuptools/bin/" >> $HOME/.zshenv
+        echo "export SETUPTOOLS_BASH_INSTALLATION=OK" >> $HOME/.zshenv
+    fi
+
 
     if [ -e $HOME/.config/fish ]; then
         curl -O https://raw.githubusercontent.com/shotastage/setuptools.sh/master/tools/fish_utils.fish
