@@ -13,6 +13,8 @@ sign_master() {
         gpg --batch --yes -u 86133173EF57B60825297D8C374773E889C0E769 -b $fname
 
         if [ `$fname | grep macOS` ]; then
+
+            echo $fname.sig
             mv $fname.sig ./strategies/macOS/signatures/
         fi
 
