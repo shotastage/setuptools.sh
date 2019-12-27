@@ -54,4 +54,3 @@ uptask() {
 
     echo $CONTENT >> ./.vscode/settings.json
 }
-
