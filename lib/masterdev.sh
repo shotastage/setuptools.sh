@@ -2,8 +2,8 @@
 
 
 master_cmd() {
-    if [ ${1} = "sign" ]; then
-        echo "SSSS"
+    if [ ${1} = "sign-master" ]; then
+        sign_master
     fi
 }
 
