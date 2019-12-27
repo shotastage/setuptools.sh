@@ -20,22 +20,22 @@ sign_master() {
 
     for fname in ./strategies/macOS/*.sh; do
         echo "🔑  Indexing macOS strategy signature ${fname} ..."
-        mv $fname ./strategies/macOS/signatures/
+        mv $fname.sig ./strategies/macOS/signatures/
     done
 
     for fname in ./task/macOS/*.sh; do
         echo "🔑  Indexing macOS task signature ${fname} ..."
-        mv $fname ./task/macOS/signatures/
+        mv $fname.sig ./task/macOS/signatures/
     done
 
     for fname in ./strategies/Linux/*.sh; do
         echo "🔑  Indexing Linux strategy signature ${fname} ..."
-        mv $fname ./strategies/Linux/signatures/
+        mv $fname.sig ./strategies/Linux/signatures/
     done
 
     for fname in ./strategies/Linux/*.sh; do
         echo "🔑  Indexing Linux task signature ${fname} ..."
-        mv $fname ./task/macOS/signatures/
+        mv $fname.sig ./task/Linux/signatures/
     done
 }
 
