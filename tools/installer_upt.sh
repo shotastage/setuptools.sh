@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
 
-build_embedded_python() {
+download_prebuilt_binary() {
 
 }
