@@ -1,9 +1,9 @@
 all:
-	go build
-	mv setuptools.sh upt
+	go build upt.go
 
 release:
-	echo "Under construction"
+	GOOS=linux GOARCH=amd64 go build upt.go
+	GOOS=darwin GOARCH=amd64 go build upt.go
 
 clean:
 	rm upt
