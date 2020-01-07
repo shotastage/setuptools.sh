@@ -2,7 +2,7 @@
 
 
 master_cmd() {
-    if [ ${1} = "sign-master" ]; then
+    if [ ${1} = "sign all" ]; then
         sign_master
     fi
 }
