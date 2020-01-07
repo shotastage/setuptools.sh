@@ -2,7 +2,7 @@
 
 
 master_cmd() {
-    if [ ${1}= "signall" ]; then
+    if [ ${1} = "signall" ]; then
         sign_master
     fi
 }
