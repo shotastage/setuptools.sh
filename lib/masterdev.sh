@@ -11,7 +11,7 @@ sign_master() {
     for fname in ./strategies/**/*.sh; do
         echo "🔑  Signinig strategy ${fname} ..."
 
-        gpg --quiet --verify $fname.sig $fname 2>/dev/null
+        gpg --quiet --verify $(dirname ${fname})/signatures/$(basename ${fname}).sig $fname 2>/dev/null
 
         if [ $? -eq 0 ]; then
             echo "🔑  $fname is already verifeid."
@@ -23,7 +23,7 @@ sign_master() {
     for fname in ./task/**/*.sh; do
         echo "🔑  Signinig strategy ${fname} ..."
 
-        gpg --quiet --verify $fname.sig $fname 2>/dev/null
+        gpg --quiet --verify $(dirname ${fname})/signatures/$(basename ${fname}).sig $fname 2>/dev/null
 
         if [ $? -eq 0 ]; then
             echo "🔑  $fname is already verifeid."
