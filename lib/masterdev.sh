@@ -3,6 +3,12 @@
 
 master_cmd() {
     if [ ${1} = "signall" ]; then
+
+        if [ ! -e uptool.sh ]; then
+            echo "❌ project files doesn't exist."
+            exit 1
+        fi
+
         sign_master
     fi
 }
