@@ -13,7 +13,7 @@ function install {
     echo "⬇️  ファイルをダウンロードしています..."
     curl -OL "https://desktop.githubusercontent.com/releases/2.2.4-be951a19/GitHubDesktop.zip"
     if [ -e GitHubDesktop.zip ]; then
-        echo "💿  イメージをマウントしています..."
+        echo "📦  パッケージを解凍しています..."
         unzip GitHubDesktop.zip >> /dev/null
         echo "⬇️  アプリケーションをインストールしています..."
         cp -r Github\ Desktop.app /Applications/
