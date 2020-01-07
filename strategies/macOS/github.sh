@@ -24,15 +24,13 @@ function install {
         exit 1
     fi
 
-    echo "💿  イメージをアンマウントしています..."
-    defer_dmg "Google Chrome"
     echo "🧹  クリーンアップしています..."
-    rm googlechrome.dmg
+    rm GitHubDesktop.zip
 }
 
 function uninstall {
     cd /Applications/
-    rm -rf Google\ Chrome.app
+    rm -rf Github\ Desktop.app
 }
 
 function update {
