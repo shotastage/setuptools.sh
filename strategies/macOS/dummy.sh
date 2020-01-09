@@ -1,19 +1,37 @@
 #!/usr/bin/env bash
 
-STRATEGY_VERSION="v001"
+. ~/.setuptools/lib/foundation.sh
 
-function install {
-    echo "THIS IS INSTALL SECTION..."
+
+STRATEGY_VERSION="v002"
+PLATFORM="macOS"
+
+DESCRIPTION=`cat << EOS
+This is dummy strategy for macOS.
+EOS
+`
+
+HELP=`cat << EOS
+This is dummy strategy for macOS.
+EOS
+`
+
+install() {
+    echo "This is install section..."
 }
 
-function uninstall {
-    echo "THIS IS UNINSTALL SECTION..."
+uninstall() {
+    echo "This is uninstall section..."
 }
 
-function update {
-    echo "THIS IS UPDATE SECTION..."
+update() {
+    echo "This is update section..."
 }
 
-function main {
-    install
+description() {
+    echo $DESCRIPTION
+}
+
+helo() {
+    echo $HELP
 }
