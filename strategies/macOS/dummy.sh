@@ -27,11 +27,3 @@ uninstall() {
 update() {
     echo "This is update section..."
 }
-
-description() {
-    echo $DESCRIPTION
-}
-
-helo() {
-    echo $HELP
-}

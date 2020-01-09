@@ -32,6 +32,14 @@ execute() {
     if [ ${1} = "uninstall" ]; then
         uninstall
     fi
+
+    if [ ${1} = "detail" ]; then
+        echo $DESCRIPTION
+    fi
+
+    if [ ${1} = "help" ]; then
+        echo $HELP
+    fi
 }
 
 
