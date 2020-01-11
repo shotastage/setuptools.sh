@@ -1,6 +1,9 @@
 #!/usr/bin/env bash
 
 
+WORKING_DIRECTORY=~/.setuptools
+
+
 verify_script() {
     echo "🔑  Verifying script..."
 
@@ -12,9 +15,22 @@ verify_script() {
         echo "" >> /dev/null
     else
         echo "❌  Invalid signature!"
-        rm -f $1.sig
         exit 1
     fi
+}
 
-    rm -f $1.sig
+
+verify_taskscript() {
+    echo "🔑  Verifying script..."
+
+    curl --silent -O $2 >> /dev/null
+    mv $1.sig  $WORKING_DIRECTORY/tasks/
+    gpg --quiet --verify $WORKING_DIRECTORY/tasks/$1.sig $WORKING_DIRECTORY/tasks/$1 2>/dev/null
+
+    if [ $? -eq 0 ]; then
+        echo "" >> /dev/null
+    else
+        echo "❌  Invalid signature!"
+        exit 1
+    fi
 }

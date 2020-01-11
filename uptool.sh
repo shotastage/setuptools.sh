@@ -13,6 +13,7 @@ splash() {
 . $WORKING_DIRECTORY/lib/tasks.sh
 . $WORKING_DIRECTORY/lib/configure.sh
 . $WORKING_DIRECTORY/lib/masterdev.sh
+. $WORKING_DIRECTORY/lib/commands.sh
 
 
 
@@ -53,6 +54,19 @@ do
         cfg | configure )
             echo "🔄  Generating configuration..."
             configure
+            exit 0
+            ;;
+        shell )
+            echo "Plase type master development command:"
+            while true
+            do
+                read -p "Uptool [Shell] >>> " cmd
+                cliarg $cmd
+
+                if [ $cmd = "exit" ]; then
+                    break
+                fi
+            done
             exit 0
             ;;
         h | help )
