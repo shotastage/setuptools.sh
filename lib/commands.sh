@@ -6,9 +6,7 @@ cliarg() {
         ls -a
     fi
 
-    if [ ${1} = "chmod" ]; then
-        if [ ${2} = "dev" ]; then
-            source ~/.setuptools/lib/masterdev.sh
-        fi
+    if [ ${1} = "chmod+dev" ]; then
+        source ~/.setuptools/lib/masterdev.sh
     fi
 }
