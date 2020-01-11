@@ -60,7 +60,7 @@ do
             echo "Plase type master development command:"
             while true
             do
-                read -p "Uptool >>> " cmd
+                read -p "UpShell >>> " cmd
                 if [ $cmd = "exit" ]; then
                     break
                 fi

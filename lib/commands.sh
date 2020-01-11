@@ -20,7 +20,6 @@ cliarg() {
                 sign_master
                 return
                 ;;
-                
         esac
     done
 
