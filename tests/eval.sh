@@ -1,5 +1,13 @@
 #!/usr/bin/env bash
 
-CMD="nano eval.sh"
+CMD="brew update"
 
-eval $CMD
+
+exec() {
+    result="$(IFS=" "; echo "${CMD[*]}")"
+    echo $result
+
+    eval $1
+}
+
+exec $CMD
