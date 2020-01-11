@@ -2,19 +2,14 @@
 
 
 cliarg() {
-    if [ ${1} = "ls" ]; then
-        ls -a
+
+    if [ ${1} = "exit" ]; then
+        echo "Terminating session..."
     fi
 
-    if [ ${1} = "ll" ]; then
-        ls -la
-    fi
+    if type ${1} > /dev/null 2>&1; then
+        eval ${1}
+    else
 
-    if [ ${1} = "echo" ]; then
-        echo $2
-    fi
-
-    if [ ${1} = "chmod+dev" ]; then
-        source ~/.setuptools/lib/masterdev.sh
     fi
 }
