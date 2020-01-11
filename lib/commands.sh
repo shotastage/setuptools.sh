@@ -5,21 +5,24 @@
 
 
 cliarg() {
-
-    if [ ${1} = "exit" ]; then
-        echo "Terminating session..."
-        return
-    fi
-
-    if [ ${1} = "back" ]; then
-        cd ..
-        return
-    fi
-
-    if [ ${1} = "signall" ]; then
-        sign_master
-        return
-    fi
+    for OPT in "$@"
+    do
+        case $OPT in
+            exit )
+                echo "Terminating session..."
+                return
+                ;;
+            baxk )
+                cd ..
+                return
+                ;;
+            signall )
+                sign_master
+                return
+                ;;
+                
+        esac
+    done
 
     if type $1 > /dev/null 2>&1; then
         eval $@
