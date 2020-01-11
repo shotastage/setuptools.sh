@@ -8,7 +8,7 @@ cliarg() {
 
     if [ ${1} = "chmod" ]; then
         if [ ${2} = "dev" ]; then
-            . ~/.setuptools/lib/masterdev.sh
+            source ~/.setuptools/lib/masterdev.sh
         fi
     fi
 }
