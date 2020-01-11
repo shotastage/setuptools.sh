@@ -4,20 +4,20 @@ STRATEGY_VERSION="v001"
 CURRENT_ID="1037126344"
 
 
-function install {
+install() {
     brew update
     brew install mas
     mas install $CURRENT_ID
 }
 
-function uninstall {
+uninstall() {
     sudo mas uninstall $CURRENT_ID
 }
 
-function update {
+update() {
     mas upgrade $CURRENT_ID
 }
 
-function main {
+main() {
     install
 }
