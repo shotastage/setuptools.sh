@@ -27,6 +27,9 @@ verify_taskscript() {
 
     gpg --quiet --verify $WORKING_DIRECTORY/tasks/${1}.sig $WORKING_DIRECTORY/tasks/${1} 2>/dev/null
 
+    echo ${1}.sig
+    echo ${1}
+    
     if [ $? -eq 0 ]; then
         echo "" >> /dev/null
     else
