@@ -61,10 +61,10 @@ do
             while true
             do
                 read -p "Uptool >>> " cmd
-                cliarg $cmd
                 if [ $cmd = "exit" ]; then
                     break
                 fi
+                cliarg $cmd
             done
             exit 0
             ;;
