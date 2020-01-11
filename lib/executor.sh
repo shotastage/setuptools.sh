@@ -1,7 +1,6 @@
 #!/usr/bin/env bash
 
 
-
 . $HOME/.setuptools/lib/platform.sh
 . $HOME/.setuptools/lib/codesign.sh
 
@@ -45,12 +44,16 @@ execute() {
 
 exetask() {
 
+    # Check task directory preparation
     if [ ! -e $WORKING_DIRECTORY/tasks/ ]; then
         mkdir $WORKING_DIRECTORY/tasks/
     fi
 
+    # Download script
     curl --silent "${TASK_MASTER_URL}/${1}.sh" -o $WORKING_DIRECTORY/tasks/${1}.sh
     chmod +x $WORKING_DIRECTORY/tasks/${1}.sh
+    verify_script ${1}.sh "https://raw.githubusercontent.com/shotastage/setuptools.sh/master/task/$(operating_system)/signatures/${2}.sh.sig"
+
     . $WORKING_DIRECTORY/tasks/${1}.sh
 
     uptask
