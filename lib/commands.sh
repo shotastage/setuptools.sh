@@ -8,7 +8,7 @@ cliarg() {
     fi
 
     if type $1 > /dev/null 2>&1; then
-        eval "$(IFS=" "; echo "${@[*]}")"
+        eval $@
     else
         echo "This command does not exist!"
     fi

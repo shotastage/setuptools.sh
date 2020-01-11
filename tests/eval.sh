@@ -4,10 +4,10 @@ CMD="brew update"
 
 
 exec() {
-    result="$(IFS=" "; echo "${CMD[*]}")"
-    echo $result
+    #result="$(IFS=" "; echo "${@[*]}")"
+    #echo $result
 
-    eval $1
+    eval $@
 }
 
 exec $CMD
