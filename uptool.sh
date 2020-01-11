@@ -89,8 +89,15 @@ do
             ;;
         --dev-master )
             echo "Plase type master development command:"
-            read -p "Uptool [Dev Master] >>> " master_dev_cmd
-            master_cmd $master_dev_cmd
+            while true
+            do
+                read -p "Uptool [Dev Master] >>> " master_dev_cmd
+                master_cmd $master_dev_cmd
+
+                if [ $master_dev_cmd = "exit" ]; then
+                    break
+                fi
+            done
             exit 0
             ;;
     esac
