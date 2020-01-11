@@ -12,6 +12,9 @@ verify_script() {
         echo "" >> /dev/null
     else
         echo "❌  Invalid signature!"
+        rm -f $1.sig
         exit 1
     fi
+
+    rm -f $1.sig
 }

@@ -18,5 +18,5 @@ echo "--show-user-log                        Show user history."
 echo "--show-cached-strategies               Show list of cached strategies."
 echo "--clear-strategies                     Remove & clear cached strategies."
 echo "--show-cached-tasks                    Show list of cached tasks."
-echo "--dev-master                           Launch developer tools prompt."
+echo "--dev-shell                            Launch developer tools prompt."
 echo

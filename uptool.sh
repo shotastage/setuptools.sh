@@ -87,7 +87,7 @@ do
             clear_tasks
             exit 0
             ;;
-        --dev-master )
+        --dev-shell )
             echo "Plase type master development command:"
             while true
             do
