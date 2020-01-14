@@ -4,7 +4,7 @@ STRATEGY_VERSION="v001"
 
 . ~/.setuptools/lib/foundation.sh
 
-function install {
+install() {
     if [ -e /Applications/Discord.app/ ]; then
         echo "🖥  Discordはすでにインストールされています."
         return
@@ -31,8 +31,25 @@ function install {
 }
 
 function uninstall {
+    echo "🗑  アプリケーションを削除しています..."
     cd /Applications/
     rm -rf Discord.app
+
+    echo "🗑  残留ファイルを削除しています..."
+    rm -rf ~/Library/Application Support/discord
+
+    echo "🗑  キャッシュを削除しています..."
+    rm -rf ~/Library/Caches/com.hnc.Discord
+    rm -rf ~/Library/Caches/com.hnc.Discord.ShipIt
+
+    echo "📄  ログをクリアしています..."
+    rm -rf ~/Library/Logs/Discord
+
+    echo "⚙️  設定を削除しています..."
+    rm -rf ~/Library/Preferences/com.hnc.Discord.plist
+
+    echo "🗑  状態を削除しています..."
+    rm -rf ~/Library/Saved Application State/com.hnc.Discord.savedState
 }
 
 function update {
