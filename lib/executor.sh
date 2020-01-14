@@ -32,6 +32,10 @@ execute() {
         uninstall
     fi
 
+    if [ ${1} = "open" ]; then
+        open
+    fi
+
     if [ ${1} = "detail" ]; then
         echo $DESCRIPTION
     fi

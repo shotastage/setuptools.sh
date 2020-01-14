@@ -30,6 +30,10 @@ do
             execute install $2
             exit 0
             ;;
+        o | open )
+            execute open $2
+            exit 0
+            ;;
         u | update )
             if [ ${2} = "self" ]; then
                 uptool-update

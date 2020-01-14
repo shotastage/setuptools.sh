@@ -30,7 +30,7 @@ install() {
     rm Discord.dmg
 }
 
-function uninstall {
+uninstall() {
     echo "🗑  アプリケーションを削除しています..."
     cd /Applications/
     rm -rf Discord.app
@@ -52,10 +52,15 @@ function uninstall {
     rm -rf ~/Library/Saved Application State/com.hnc.Discord.savedState
 }
 
-function update {
-    echo "NOW UNDER CONSTRUCTION!"
+update() {
+    echo "🔄  To upgrade Discord app, please open app and then"
+    open -a Discord.app
 }
 
-function main {
+open() {
+    open -a Discord.app 
+}
+
+main() {
     install
 }
