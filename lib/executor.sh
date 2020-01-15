@@ -62,6 +62,9 @@ exetask() {
     chmod +x $WORKING_DIRECTORY/tasks/${1}.sh
     verify_taskscript ${1}.sh "https://raw.githubusercontent.com/shotastage/setuptools.sh/master/task/$(operating_system)/signatures/${2}.sh.sig"
 
+    echo "SSS"
+    echo "https://raw.githubusercontent.com/shotastage/setuptools.sh/master/task/$(operating_system)/signatures/${2}.sh.sig"
+
     . $WORKING_DIRECTORY/tasks/${1}.sh
 
     uptask
