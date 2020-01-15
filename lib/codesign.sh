@@ -23,9 +23,9 @@ verify_script() {
 verify_taskscript() {
     echo "🔑  Verifying script..."
 
-    curl --silent $2 -o $WORKING_DIRECTORY/tasks/${1}.sig
+    curl --silent $2 -o $WORKING_DIRECTORY/tasks/$1.sig
 
-    gpg --quiet --verify $WORKING_DIRECTORY/tasks/${1}.sig $WORKING_DIRECTORY/tasks/${1} 2>/dev/null
+    gpg --verify $WORKING_DIRECTORY/tasks/$1.sig $WORKING_DIRECTORY/tasks/$1
 
     if [ $? -eq 0 ]; then
         echo "" >> /dev/null
