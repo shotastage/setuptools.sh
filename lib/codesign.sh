@@ -25,9 +25,6 @@ verify_taskscript() {
 
     curl --silent $2 -o $WORKING_DIRECTORY/tasks/$1.sig
 
-
-    echo $WORKING_DIRECTORY/tasks/$1.sig
-
     gpg --verify $WORKING_DIRECTORY/tasks/$1.sig $WORKING_DIRECTORY/tasks/$1
 
     if [ $? -eq 0 ]; then
