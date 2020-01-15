@@ -53,6 +53,9 @@ exetask() {
         mkdir $WORKING_DIRECTORY/tasks/
     fi
 
+    echo "::::: Develop"
+    echo $WORKING_DIRECTORY/tasks/${1}.sh
+
     # Download script
     curl --silent "${TASK_MASTER_URL}/${1}.sh" -o $WORKING_DIRECTORY/tasks/${1}.sh
     chmod +x $WORKING_DIRECTORY/tasks/${1}.sh
