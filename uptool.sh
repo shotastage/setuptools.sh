@@ -60,7 +60,7 @@ do
             configure
             exit 0
             ;;
-        shell )
+        shell | sh )
             echo "Plase type master development command:"
             while true
             do
@@ -102,19 +102,6 @@ do
             ;;
         --clear-tasks )
             clear_tasks
-            exit 0
-            ;;
-        --dev-shell )
-            echo "Plase type master development command:"
-            while true
-            do
-                read -p "Uptool [Dev Master] >>> " master_dev_cmd
-                master_cmd $master_dev_cmd
-
-                if [ $master_dev_cmd = "exit" ]; then
-                    break
-                fi
-            done
             exit 0
             ;;
     esac

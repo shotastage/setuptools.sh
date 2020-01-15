@@ -11,6 +11,7 @@ echo "update      u     [package]            Update package."
 echo "uninstall         [package]            Remove package."
 echo "task        t     [task]               Run uptool task."
 echo "configure   cfg                        Create configuration."
+echo "shell       sh                         Open Setuptools Shell."
 echo "help        h                          Show help."
 echo "version     v                          Show version."
 echo
@@ -18,5 +19,4 @@ echo "--show-user-log                        Show user history."
 echo "--show-cached-strategies               Show list of cached strategies."
 echo "--clear-strategies                     Remove & clear cached strategies."
 echo "--show-cached-tasks                    Show list of cached tasks."
-echo "--dev-shell                            Launch developer tools prompt."
 echo
