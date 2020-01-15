@@ -12,7 +12,7 @@ cliarg() {
                 echo "Terminating session..."
                 return
                 ;;
-            baxk )
+            back )
                 cd ..
                 return
                 ;;
