@@ -1,3 +1,5 @@
 #!/usr/bin/env ruby
 
 require "uptool"
+
+puts "NOW UNDER CONSTRUCTION!"
