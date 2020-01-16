@@ -2,7 +2,7 @@
 
 uptask() {
     
-    dir_path="~/*"
+    dir_path=~/*
     dirs=`find $dir_path -maxdepth 0 -type d`
 
     for dir in $dirs;
