@@ -2,5 +2,4 @@
 
 require "uptool"
 
-puts "NOW UNDER CONSTRUCTION!"
-Uptool::Command.start(ARGV)
+Uptool::CLI.start(ARGV)
