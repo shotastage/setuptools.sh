@@ -7,7 +7,7 @@ install() {
         echo "🪁  Pockはすでにインストールされています."
         return
     fi
-    echo "⬇️  Kitematicをインストールします."
+    echo "⬇️  Pockをインストールします."
     echo "⬇️  ファイルをダウンロードしています..."
     curl -sLJO "https://pock.dev/download.php?file=pock_0_7_2.zip"
     if [ -e pock_0_7_2.zip ]; then
@@ -28,8 +28,15 @@ install() {
 
 uninstall() {
     cd /Applications/
+    echo "🗑 Removing Pock..."
     rm -rf Pock.app
+    echo "🗑 Removing remainings..."
+    rm -rf ~/Library/Application\ Support/Pock
+    rm -rf ~/Library/Application\ Support/com.pigigaldi.pock
+    rm -rf ~/Library/Caches/com.pigigaldi.pock
+
     echo "🧹 Pock has been uninstalled!"
+    
 }
 
 update() {
