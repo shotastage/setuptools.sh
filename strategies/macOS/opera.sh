@@ -5,7 +5,7 @@ STRATEGY_VERSION="v001"
 
 . $HOME/.setuptools/lib/network.sh
 
-function install {
+install() {
     if [ -e /Applications/Opera.app ]; then
         echo "🖥  Operaはすでにインストールされています."
         return
@@ -31,16 +31,16 @@ function install {
     rm ._Opera\ Installer.app
 }
 
-function uninstall {
+uninstall() {
     cd /Applications/
     rm -rf Opera.app
     echo "🧹 Opera has been uninstalled!"
 }
 
-function update {
+update() {
     echo "NOW UNDER CONSTRUCTION"
 }
 
-function main {
+main() {
     install
 }

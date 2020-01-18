@@ -25,7 +25,7 @@ function install {
     fi
 
     echo "💿  イメージをアンマウントしています..."
-    defer_dmg balenaEtcher\ 1.5.70
+    defer_dmg "balenaEtcher 1.5.70"
     echo "🧹  クリーンアップしています..."
     rm balenaEtcher-1.5.70.dmg
 }
