@@ -1,22 +1,34 @@
 #!/usr/bin/env bash
 
-STRATEGY_VERSION="v001"
-
 . ~/.setuptools/lib/foundation.sh
 
+
+STRATEGY_VERSION="v002"
+PLATFORM="macOS"
+
+DESCRIPTION=`cat << EOS
+This is dummy strategy for macOS.
+EOS
+`
+
+HELP=`cat << EOS
+This is dummy strategy for macOS.
+EOS
+`
+
 install() {
-    if [ -e /Applications/Google\ Chrome.app/ ]; then
-        echo "🖥  Chromeはすでにインストールされています."
+    if [ -e /Applications/Docker.app/ ]; then
+        echo "🐳  Docker Desktopはすでにインストールされています."
         return
     fi
-    echo "⬇️  Chromeをインストールします."
+    echo "⬇️  Docker Desktopをインストールします."
     echo "⬇️  ファイルをダウンロードしています..."
-    curl -OL "https://dl.google.com/chrome/mac/stable/CHFA/googlechrome.dmg"
-    if [ -e googlechrome.dmg ]; then
+    curl -OL "https://download.docker.com/mac/stable/Docker.dmg"
+    if [ -e Docker.dmg ]; then
         echo "💿  イメージをマウントしています..."
-        dmg googlechrome.dmg
+        dmg Docker.dmg
         echo "⬇️  アプリケーションをインストールしています..."
-        cp -r /Volumes/Google\ Chrome/Google\ Chrome.app /Applications/
+        cp -r /Volumes/Docker/Docker.app /Applications/
     else
         echo "⚠️ パッケージのダウンロードに失敗しました！"
         echo "スクリプトを終了します [ Press Return to continue]"
@@ -25,20 +37,15 @@ install() {
     fi
 
     echo "💿  イメージをアンマウントしています..."
-    defer_dmg "Google Chrome"
+    defer_dmg "Docker"
     echo "🧹  クリーンアップしています..."
-    rm googlechrome.dmg
+    rm Docker.dmg
 }
 
 uninstall() {
-    cd /Applications/
-    rm -rf Google\ Chrome.app
+    echo "Now under construction..."
 }
 
 update() {
-    echo "NOW UNDER CONSTRUCTION!"
-}
-
-main() {
-    install
+    echo "Now under construction..."
 }
