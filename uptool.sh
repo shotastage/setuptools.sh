@@ -14,11 +14,14 @@ splash() {
 . $WORKING_DIRECTORY/lib/configure.sh
 . $WORKING_DIRECTORY/lib/masterdev.sh
 . $WORKING_DIRECTORY/lib/commands.sh
-
+. $WORKING_DIRECTORY/lib/configure.sh
+. $WORKING_DIRECTORY/lib/storage.sh
 
 
 splash 
 initialize
+initialize_configure
+initialize_storage
 prepare_workspace
 
 

@@ -27,7 +27,6 @@ digest_files() {
 }
 
 install_file() {
-    initialize_storage
     _register_storage_app $1
     cp -r $2 $HOME/.setuptools/storage/$1/$2
 }
