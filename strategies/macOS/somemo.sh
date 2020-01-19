@@ -51,5 +51,12 @@ uninstall() {
 }
 
 update() {
-    echo "This is update section..."
+    rm -rf ~/setuptools/toolchains/somemo/
+    curl -O https://raw.githubusercontent.com/shotastage/shota-no-open-memo/master/memo-next.sh
+    chmod +x memo-next.sh
+    mkdir -p ./somemo/bin/
+    mv memo-next.sh ./somemo/bin/memo
+
+    prepare_toolchain
+    install_toolchain somemo
 }
