@@ -14,9 +14,7 @@ initialize_storage() {
 }
 
 _register_storage_app() {
-    if [ -e ~/.setuptools/storage/$1 ]; then
-        echo "Write record" >> ~/.setuptools/storage/$1/history
-    else
+    if [ ! -e ~/.setuptools/storage/$1 ]; then
         echo "Registering application..."
         mkdir -p ~/.setuptools/storage/$1
     fi
