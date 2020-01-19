@@ -1,24 +1,37 @@
 #!/usr/bin/env bash
 
 
-. $HOME/.setuptools/lib/platform.sh
+. ~/.setuptools/lib/platform.sh
+. ~/.setuptools/lib/codesign.sh
+
 
 initialize_storage() {
-    if [ ! -e $HOME/.setuptools/lib/storage/ ]; then
-        mkdir -p $HOME/.setuptools/lib/storage/
+    if [ ! -e $HOME/.setuptools/storage/ ]; then
+        mkdir -p $HOME/.setuptools/storage/
     fi
 
-    touch $HOME/.setuptools/lib/storage/storage.idx
+    touch $HOME/.setuptools/storage/storage.idx
 }
 
-install_file() {
-    cp -r $1 $HOME/.setuptools/storage/
-}
-
-install_storage_application() {
-
+_register_storage_app() {
+    if [ -e ~/.setuptools/storage/$1 ]; then
+        echo "Write record" >> ~/.setuptools/storage/$1/history
+    else
+        echo "Registering application..."
+        mkdir -p ~/.setuptools/storage/$1
+    fi
 }
 
 digest_files() {
+    echo "Calclating hash..."
+}
 
+install_file() {
+    initialize_storage
+    _register_storage_app $1
+    cp -r $2 $HOME/.setuptools/storage/$1/$2
+}
+
+upstorage_path() {
+    echo "${HOME}/.setuptools/storage/${1}/${2}"
 }
