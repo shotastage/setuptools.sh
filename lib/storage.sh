@@ -34,3 +34,8 @@ install_file() {
 upstorage_path() {
     echo "${HOME}/.setuptools/storage/${1}/${2}"
 }
+
+
+upstorage_dirpath() {
+    echo "${HOME}/.setuptools/storage/${1}/"
+}
