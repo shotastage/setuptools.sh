@@ -20,6 +20,6 @@ function uninstall_toolchain {
     if [ -e $HOME/.setuptools/toolchains/$1 ]; then
         rm -rf $HOME/.setuptools/toolchains/$1
     else
-        echo "🌞  Toolchain $1 dies not exists!"
+        echo "🌞  Toolchain $1 does not exists!"
     fi
 }

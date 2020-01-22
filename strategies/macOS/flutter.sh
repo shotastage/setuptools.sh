@@ -5,7 +5,7 @@ STRATEGY_VERSION="v001"
 . ~/.setuptools/lib/toolchain.sh
 . ~/.setuptools/lib/fish.sh
 
-function install {
+install() {
     echo "⬇️  Downloading package..."
     curl -LO https://storage.googleapis.com/flutter_infra/releases/stable/macos/flutter_macos_v1.12.13+hotfix.5-stable.zip
     echo "📦  Extracting package..."
@@ -24,22 +24,28 @@ function install {
     echo "👍🏻  Installation completed!"
 }
 
-function uninstall {
-    echo "Uninstall strategy does not exists!"
+uninstall() {
+    uninstall_toolchain flutter
 }
 
-function update {
+update() {
     flutter upgrade
 }
 
-function add_path {
+add_path() {
     echo "" >> $HOME/.bash_profile
     echo "################ Flutter SDK ################" >> $HOME/.bash_profile
     echo "export PATH=\$PATH:~/.setuptools/toolchains/flutter/bin" >> $HOME/.bash_profile
     add_fish_path "\$HOME/.setuptools/toolchains/flutter/bin"
     rm fish_adding_script.fish
+
+    if [ -e $HOME/.zshenv ]; then
+        echo "🖊  Adding Zsh path..."
+        echo "################ Flutter SDK ################" >> $HOME/.zshenv
+        echo "export PATH=\$PATH:~/.setuptools/toolchains/flutter/bin" >> $HOME/.zshenv
+    fi
 }
 
-function main {
+main() {
     install
 }
