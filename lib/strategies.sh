@@ -23,6 +23,12 @@ list_strategies() {
 
 clear_strategies() {
     for fname in $HOME/.setuptools/strategies/*.sh; do
+        echo "Clearing $(basename $fname)..."
+        rm -f $fname
+    done
+
+    for fname in $HOME/.setuptools/strategies/*.sig; do
+        echo "Clearing $(basename $fname)..."
         rm -f $fname
     done
     echo "🗑  All cached strategies has been removed."
