@@ -3,6 +3,9 @@
 STRATEGY_VERSION="v001"
 CURRENT_ID="1333542190"
 
+. ~/.setuptools/lib/foundation.sh
+
+
 install() {
     brew update
     brew install mas
@@ -16,3 +19,5 @@ uninstall() {
 update() {
     mas upgrade $CURRENT_ID
 }
+
+end_script
