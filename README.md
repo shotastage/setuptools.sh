@@ -43,6 +43,23 @@ $ uptool upate [app name]
 $ uptool uninstall [app name]
 ```
 
+### Search application strategy
+
+```
+$ uptool search [app name]
+```
+
+### Update Setuptool.sh
+
+```
+$ uptool update self
+```
+
+### Run uptool task
+
+```
+$ uptool task [task name]
+```
 
 ## Utilities
 
