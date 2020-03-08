@@ -15,7 +15,7 @@ preapre_tmp() {
 }
 
 download() {
-    echo "⬇️  Downloading newest package..."
+    echo "⬇️  Downloading latest package..."
     git clone --quiet https://github.com/shotastage/setuptools.sh.git $WORKSPACE/netinst/ >> /dev/null
 }
 
