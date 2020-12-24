@@ -11,7 +11,7 @@ install() {
     fi
     echo "⬇️  Discordをインストールします."
     echo "⬇️  ファイルをダウンロードしています..."
-    curl -OL "https://dl.discordapp.net/apps/osx/0.0.255/Discord.dmg"
+    curl -OL "https://dl.discordapp.net/apps/osx/0.0.260/Discord.dmg"
     if [ -e Discord.dmg ]; then
         echo "💿  イメージをマウントしています..."
         dmg Discord.dmg
