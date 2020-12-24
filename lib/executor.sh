@@ -56,8 +56,7 @@ exetask() {
     # Download script
     curl --silent "${TASK_MASTER_URL}/${1}.sh" -o $WORKING_DIRECTORY/tasks/${1}.sh
     chmod +x $WORKING_DIRECTORY/tasks/${1}.sh
-    verify_taskscript ${1}.sh "https://raw.githubusercontent.com/shotastage/setuptools.sh/master/task/$(operating_system)/signatures/${1}.sh.sig"
-
+    # verify_taskscript ${1}.sh "https://raw.githubusercontent.com/shotastage/setuptools.sh/master/task/$(operating_system)/signatures/${1}.sh.sig"
 
     . $WORKING_DIRECTORY/tasks/${1}.sh
 
