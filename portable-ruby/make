@@ -1,7 +1,0 @@
-#!/usr/bin/env bash
-
-echo "Now under construction."
-
-download_ruby {
-    curl -O 
-}
