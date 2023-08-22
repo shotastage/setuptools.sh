@@ -7,7 +7,7 @@ now under construction
 To install setuptools.sh, just run following commmands.
 
 ```
-bash <(curl -sL https://l.pnstr.com/3rrDI)
+bash <(curl -sL https://raw.githubusercontent.com/shotastage/setuptools.sh/main/tools/installer_next.sh)
 ```
 
 ### macOS
