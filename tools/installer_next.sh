@@ -29,7 +29,7 @@ function shell_configure {
 
 
     if [ -e $HOME/.config/fish ]; then
-        curl -O https://raw.githubusercontent.com/shotastage/setuptools.sh/master/tools/fish_utils.fish
+        curl -O https://raw.githubusercontent.com/shotastage/setuptools.sh/main/tools/fish_utils.fish
         chmod +x fish_utils.fish
         fish fish_utils.fish
     fi
