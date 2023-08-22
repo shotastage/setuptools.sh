@@ -3,40 +3,25 @@
 STRATEGY_VERSION="v001"
 
 . ~/.setuptools/lib/foundation.sh
+. ~/.setuptools/lib/use_homebrew.sh
 
 install() {
     if [ -e /Applications/Google\ Chrome.app/ ]; then
         echo "🖥  Chromeはすでにインストールされています."
         return
     fi
-    echo "⬇️  Chromeをインストールします."
-    echo "⬇️  ファイルをダウンロードしています..."
-    curl -OL "https://dl.google.com/chrome/mac/stable/CHFA/googlechrome.dmg"
-    if [ -e googlechrome.dmg ]; then
-        echo "💿  イメージをマウントしています..."
-        dmg googlechrome.dmg
-        echo "⬇️  アプリケーションをインストールしています..."
-        cp -r /Volumes/Google\ Chrome/Google\ Chrome.app /Applications/
-    else
-        echo "⚠️ パッケージのダウンロードに失敗しました！"
-        echo "スクリプトを終了します [ Press Return to continue]"
-        read
-        exit 1
-    fi
 
-    echo "💿  イメージをアンマウントしています..."
-    defer_dmg "Google Chrome"
-    echo "🧹  クリーンアップしています..."
-    rm googlechrome.dmg
+    use_homebrew
+    brew install --cask google-chrome  
 }
 
 uninstall() {
-    cd /Applications/
-    rm -rf Google\ Chrome.app
+    use_homebrew
+    brew uninstall google-chrome
 }
 
 update() {
-    echo "NOW UNDER CONSTRUCTION!"
+    echo "Google Chrome has self-updating tool. Please check or update on the About page."
 }
 
 main() {

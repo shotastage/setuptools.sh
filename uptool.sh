@@ -81,8 +81,8 @@ do
             ;;
         v | version )
             echo
-            echo "setuptools 1.1.0"
-            echo "Copyright (C) 2019 Shota Shimazu, All rights reserved."
+            echo "setuptools 1.1.1"
+            echo "Copyright (C) 2019-2023 Shota Shimazu, All rights reserved."
             echo 
             exit 0
             ;;
