@@ -1,9 +1,7 @@
 #!/usr/bin/env bash
 
-
-
 echo
-echo "Setuptools v1.1.0"
+echo "Setuptools v1.1.2"
 echo
 echo "install     i     [package]            Install or setup new package."
 echo "search      s     [package]            Search setup strategies."
@@ -17,6 +15,6 @@ echo "version     v                          Show version."
 echo
 echo "--show-user-log                        Show user history."
 echo "--show-cached-strategies               Show list of cached strategies."
-echo "--clear-strategies                     Remove & clear cached strategies."
 echo "--show-cached-tasks                    Show list of cached tasks."
+echo "--clear-cache                          Remove & clear cached strategies and tasks."
 echo
