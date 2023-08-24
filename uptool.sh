@@ -18,7 +18,7 @@ splash() {
 . $WORKING_DIRECTORY/lib/storage.sh
 
 
-splash 
+splash
 initialize
 initialize_configure
 initialize_storage

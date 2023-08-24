@@ -5,13 +5,20 @@
 
 search_strategy() {
     echo "🔎  Searching..."
-    res=`curl -LI https://raw.githubusercontent.com/shotastage/setuptools.sh/main/strategies/$(operating_system)/${1}.sh -w '%{http_code}\n' -s -o /dev/null`
-    if [ 404 = "${res}" ]; then
+
+    files=$(curl -s "https://api.github.com/repos/shotastage/setuptools.sh/git/trees/main?recursive=1" | \
+            grep -Eo 'strategies/'$(operating_system)'/.+\.sh"')
+
+    matching_files=$(echo "$files" | grep "${1}" | sed 's/"//g')
+
+    if [ -z "$matching_files" ]; then
         echo "❌  Strategy $1 does not exists!"
     else
-        echo "⭕️  Strategy $1 found!"
+        echo "⭕️  Strategy candidates found:"
+        echo "$matching_files"
     fi
 }
+
 
 list_strategies() {
     echo "Cached strategies:"
