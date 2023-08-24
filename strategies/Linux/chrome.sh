@@ -8,7 +8,7 @@ function install {
 
     if [ "$architecture" == "arm64" ]; then
         echo "Currently, Google Chrome does not support ARM64 CPU. Thus, Chromium (OSS Chrome build) will be installed instead."
-        sudo apt-get install -y install chromium-browser
+        sudo apt-get install -y install chromium
         exit 0
     fi
 
@@ -30,7 +30,7 @@ function install {
 
 function uninstall {
     if [ "$architecture" == "arm64" ]; then
-        sudo apt-get remove chromium-browser --purge
+        sudo apt-get remove chromium --purge
     fi
 
     sudo apt-get remove google-chrome-stable --purge
@@ -38,7 +38,7 @@ function uninstall {
 
 function update {
     if [ "$architecture" == "arm64" ]; then
-        sudo apt-get install chromium-browser
+        sudo apt-get install chromium
     fi
     sudo apt-get install google-chrome-stable -y
 }
