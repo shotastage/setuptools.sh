@@ -51,7 +51,7 @@ do
             exit 0
             ;;
         t | task )
-            if ["$($2)" == '--check']; then
+            if [ ${2} = "--check" ]; then
                 show_task_script $2
                 exit 0
             fi
