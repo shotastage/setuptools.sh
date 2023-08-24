@@ -61,7 +61,7 @@ function before_preparation {
 
 ##### Check ######################################################################
 if [ -e $HOME/.setuptools/bin/ ]; then
-    echo "👻 setuptools already installed!"
+    echo "👻 UpScripts already installed!"
     exit 1
 fi
 
@@ -94,6 +94,7 @@ mkdir -p $HOME/.setuptools/lib/
 mkdir -p $HOME/.setuptools/config/
 mv ./lib/ $HOME/.setuptools/
 cp -f uptool.sh $HOME/.setuptools/bin/uptool
+cp -f ups.sh $HOME/.setuptools/bin/ups
 mv setuptools.sh $HOME/.setuptools/bin/setuptools-help
 mv uptool-update.sh $HOME/.setuptools/bin/uptool-update
 

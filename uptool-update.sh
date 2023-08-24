@@ -28,6 +28,7 @@ install_new() {
     cp -rf $WORKSPACE/netinst/lib/ $HOME/.setuptools/lib/
     mkdir -p $HOME/.setuptools/bin/
     cp -f $WORKSPACE/netinst/uptool.sh $HOME/.setuptools/bin/uptool
+    cp -f $WORKSPACE/netinst/ups.sh $HOME/.setuptools/bin/ups
     cp -f $WORKSPACE/netinst/uptool-update.sh $HOME/.setuptools/bin/uptool-update
     cp -f $WORKSPACE/netinst/setuptools-help.sh $HOME/.setuptools/bin/setuptools-help
 }
@@ -37,7 +38,7 @@ cd $HOME
 
 preapre_tmp
 download
-echo "🔄  Updating setuptools..."
+echo "🔄  Updating UpScripts..."
 destory_old
 install_new
 
