@@ -18,16 +18,20 @@ search_strategy() {
 
     if [ -z "$smatching_files" ]; then
         echo "❌  No strategy found!"
+        echo
     else
-        echo "⭕️  Strategy candidates found:"
+        echo "[Strategies]"
         echo "$smatching_files"
+        echo
     fi
 
     if [ -z "$tmatching_files" ]; then
         echo "❌  No task found!"
+        echo
     else
-        echo "⭕️  Task candidates found:"
+        echo "[Tasks]"
         echo "$tmatching_files"
+        echo
     fi
 }
 
