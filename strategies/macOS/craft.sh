@@ -9,17 +9,17 @@ CURRENT_ID="1487937127"
 
 
 function install {
-    use_mass
+    use_mas
     mas install $CURRENT_ID
 }
 
 function uninstall {
-    use_mass
+    use_mas
     mas uninstall $CURRENT_ID
 }
 
 function update {
-    use_mass
+    use_mas
     mas upgrade $CURRENT_ID
 }
 

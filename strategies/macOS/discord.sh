@@ -3,37 +3,22 @@
 STRATEGY_VERSION="v001"
 
 . ~/.setuptools/lib/foundation.sh
+. ~/.setuptools/lib/use_homebrew.sh
 
 install() {
     if [ -e /Applications/Discord.app/ ]; then
         echo "🖥  Discordはすでにインストールされています."
         return
     fi
-    echo "⬇️  Discordをインストールします."
-    echo "⬇️  ファイルをダウンロードしています..."
-    curl -OL "https://dl.discordapp.net/apps/osx/0.0.260/Discord.dmg"
-    if [ -e Discord.dmg ]; then
-        echo "💿  イメージをマウントしています..."
-        dmg Discord.dmg
-        echo "⬇️  アプリケーションをインストールしています..."
-        cp -r /Volumes/Discord/Discord.app /Applications/
-    else
-        echo "⚠️ パッケージのダウンロードに失敗しました！"
-        echo "スクリプトを終了します [ Press Return to continue]"
-        read
-        exit 1
-    fi
 
-    echo "💿  イメージをアンマウントしています..."
-    defer_dmg "Discord"
-    echo "🧹  クリーンアップしています..."
-    rm Discord.dmg
+    use_homebrew
+    brew install --cask discord
 }
 
 uninstall() {
     echo "🗑  アプリケーションを削除しています..."
-    cd /Applications/
-    rm -rf Discord.app
+    use_homebrew
+    brew uninstall discord
 
     echo "🗑  残留ファイルを削除しています..."
     rm -rf ~/Library/Application Support/discord
