@@ -11,7 +11,7 @@ function install {
     echo "⬇️  ファイルをダウンロードしています..."
     curl -OL "https://go.microsoft.com/fwlink/?LinkID=620882"
     if [ -e ./?LinkID\=620882 ]; then
-        mv ?LinkID\=620882 VSCode-darwin-stable.zip 
+        mv ?LinkID\=620882 VSCode-darwin-stable.zip
         echo "📦  パッケージを展開しています..."
         unzip VSCode-darwin-stable.zip >> /dev/null
     else
@@ -20,7 +20,7 @@ function install {
         read
         exit 1
     fi
-       
+
     echo "⬇️  アプリケーションをインストールしています..."
     mv Visual\ Studio\ Code.app/ /Applications/
     echo "🧹  クリーンアップしています..."

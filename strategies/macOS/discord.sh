@@ -43,7 +43,7 @@ update() {
 }
 
 open() {
-    open -a Discord.app 
+    open -a Discord.app
 }
 
 main() {
