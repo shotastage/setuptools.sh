@@ -6,7 +6,7 @@ echo
 echo "install     i     [package]            Install or setup new package."
 echo "search      s     [package]            Search setup strategies."
 echo "update      u     [package]            Update package."
-echo "uninstall         [package]            Remove package."
+echo "uninstall   r     [package]            Remove package."
 echo "task        t     [task]               Run uptool task."
 echo "configure   cfg                        Create configuration."
 echo "shell       sh                         Open Setuptools Shell."

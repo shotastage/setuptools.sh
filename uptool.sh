@@ -58,7 +58,7 @@ do
             exetask $2
             exit 0
             ;;
-        uninstall | remove )
+        uninstall | r )
             execute uninstall $2
             exit 0
             ;;
