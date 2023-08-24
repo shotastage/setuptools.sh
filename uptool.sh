@@ -98,17 +98,12 @@ do
             list_strategies
             exit 0
             ;;
-        --clear-strategies )
-            clear_strategies
-            exit 0
-            ;;
-
         --show-cached-tasks )
             list_tasks
             exit 0
             ;;
-        --clear-tasks )
-            clear_tasks
+        --clear-cache )
+            clear_strategies
             exit 0
             ;;
     esac

@@ -38,7 +38,6 @@ search_strategy() {
 }
 
 
-
 list_strategies() {
     echo "Cached strategies:"
     echo
@@ -57,5 +56,15 @@ clear_strategies() {
         echo "Clearing $(basename $fname)..."
         rm -f $fname
     done
-    echo "🗑  All cached strategies has been removed."
+
+    for fname in $HOME/.setuptools/tasks/*.sh; do
+        echo "Clearing $(basename $fname)..."
+        rm -f $fname
+    done
+
+    for fname in $HOME/.setuptools/tasks/*.sig; do
+        echo "Clearing $(basename $fname)..."
+        rm -f $fname
+    done
+    echo "🗑  All cached strategies and tasks has been removed."
 }
