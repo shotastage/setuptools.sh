@@ -17,10 +17,12 @@ search_strategy() {
     tmatching_files=$(echo "$tfiles" | grep "${1}" | sed 's/"//g' | awk -F/ '{print $NF}' | sed 's/\.sh//g')
 
     if [ -z "$smatching_files" ]; then
+        echo
         echo "❌  No strategy found!"
         echo
     else
-        echo "[Strategies]"
+        echo
+        echo "📦 Strategies:"
         echo "$smatching_files"
         echo
     fi
@@ -29,7 +31,7 @@ search_strategy() {
         echo "❌  No task found!"
         echo
     else
-        echo "[Tasks]"
+        echo "🛠️ Tasks:"
         echo "$tmatching_files"
         echo
     fi
