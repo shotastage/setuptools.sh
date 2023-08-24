@@ -95,8 +95,8 @@ mkdir -p $HOME/.setuptools/config/
 mv ./lib/ $HOME/.setuptools/
 cp -f uptool.sh $HOME/.setuptools/bin/uptool
 cp -f ups.sh $HOME/.setuptools/bin/ups
-mv setuptools-help.sh $HOME/.setuptools/bin/setuptools-help
-mv uptool-update.sh $HOME/.setuptools/bin/uptool-update
+cp -f setuptools-help.sh $HOME/.setuptools/bin/setuptools-help
+cp -f uptool-update.sh $HOME/.setuptools/bin/uptool-update
 
 # Shell Configuration
 shell_configure
