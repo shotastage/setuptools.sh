@@ -52,7 +52,7 @@ do
             ;;
         t | task )
             if [ ${2} = "--check" ]; then
-                show_task_script $2
+                show_task_script $3
                 exit 0
             fi
             exetask $2
