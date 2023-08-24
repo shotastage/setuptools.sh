@@ -31,7 +31,7 @@ search_strategy() {
         echo "❌  No task found!"
         echo
     else
-        echo "🛠️ Tasks:"
+        echo "🛠️  Tasks:"
         echo "$tmatching_files"
         echo
     fi

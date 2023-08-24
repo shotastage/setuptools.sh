@@ -3,15 +3,6 @@
 
 . $HOME/.setuptools/lib/platform.sh
 
-search_task() {
-    echo "🔎  Searching..."
-    res=`curl -LI https://raw.githubusercontent.com/shotastage/setuptools.sh/main/task/$(operating_system)/${1}.sh -w '%{http_code}\n' -s -o /dev/null`
-    if [ 404 = "${res}" ]; then
-        echo "❌  Task $1 does not exists!" 
-    else
-        echo "⭕️  Task $1 found!"
-    fi
-}
 
 list_tasks() {
     echo "Cached tasks:"
@@ -26,4 +17,18 @@ clear_tasks() {
         rm -f $fname
     done
     echo "🗑  All cached tasks has been removed."
+}
+
+show_task_script() {
+    # Check task directory preparation
+    if [ ! -e $WORKING_DIRECTORY/tasks/ ]; then
+        mkdir $WORKING_DIRECTORY/tasks/
+    fi
+
+    # Download script
+    curl --silent "${TASK_MASTER_URL}/${1}.sh" -o $WORKING_DIRECTORY/tasks/${1}.sh
+    chmod +x $WORKING_DIRECTORY/tasks/${1}.sh
+    # verify_taskscript ${1}.sh "https://raw.githubusercontent.com/shotastage/setuptools.sh/master/task/$(operating_system)/signatures/${1}.sh.sig"
+
+    cat $WORKING_DIRECTORY/tasks/${1}.sh
 }

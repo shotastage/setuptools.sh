@@ -51,6 +51,10 @@ do
             exit 0
             ;;
         t | task )
+            if ["$($2)" == '--check']; then
+                show_task_script
+                exit 0
+            fi
             exetask $2
             exit 0
             ;;
@@ -81,9 +85,9 @@ do
             ;;
         v | version )
             echo
-            echo "setuptools 1.1.1"
+            echo "setuptools 1.1.2"
             echo "Copyright (C) 2019-2023 Shota Shimazu, All rights reserved."
-            echo 
+            echo
             exit 0
             ;;
         --show-user-log )
