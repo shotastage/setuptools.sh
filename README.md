@@ -66,5 +66,5 @@ $ uptool task [task name]
 ### Uninstall setuptools
 
 ```
-bash <(curl -sL https://2oo.pw/freyz)
+bash <(curl -sL https://raw.githubusercontent.com/shotastage/setuptools.sh/main/tools/uninstall.sh)
 ```
